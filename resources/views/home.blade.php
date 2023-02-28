@@ -23,7 +23,7 @@
   <!-- FontAwesome -->
   <script src="https://kit.fontawesome.com/bfcc361c81.js" crossorigin="anonymous"></script>
   <!-- Navbar -->
-  <nav style="width: 50%; border-bottom: solid rgba(0, 0, 0, 0.45);" id="navbar-wrapper" class="navbar navbar-expand-lg navbar-light border-1">
+  <nav style="width: 50%;" id="navbar-wrapper" class="navbar navbar-expand-lg navbar-light border-bottom">
     <div class="container-fluid d-block">
       <div class="d-flex justify-content-evenly align-items-center">
         <a style="height: 4.5rem;" class="navbar-brand text-center text-center d-block m-0" id="nav-left" href="#head">
@@ -36,18 +36,27 @@
   </nav>
   <!-- Head -->
   <div id="head" class="container-fluid row p-0 m-auto">
-    <div id="head-left-content" class="col-md-6">
-      <div id="wrapper-left" class="container d-flex justify-content-center align-items-lg-start flex-column">
-        <h1 id="title-landing" class="h1 cormorant">
-          <span class="secondary-color handwritten">Memorable</span>
-          <br>Hotel for
-          <br>moments <span class="secondary-color handwritten">Rich</span>
-          <br>in emotions
-        </h1>
-        <h4 class="h4">Book now and get the best prices</h4>
+    <div id="head-left-content" class="col-md-6 border-bottom">
+      <div id="wrapper-left" class="d-flex h-100">
+        <div id="wrapper-text-landing" class="position-relative w-100">
+          <div id="text-landing" class="position-absolute">
+            <h1 id="title-landing" class="h1 cormorant m-0">
+              <span class="secondary-color handwritten h1">Memorable</span>
+              <br>Hotel for
+              <br>moments <span class="secondary-color handwritten h1">Rich</span>
+              <br>in emotions
+            </h1>
+            <h5 class="h5 py-4">Book now and get the best prices</h5>
+          </div>
+        </div>
       </div>
     </div>
-    <div id="head-right-content" class="col-md-6"></div>
+    <div id="head-right-content" class="col-md-6">
+      <div id="box-img-landing" class="position-absolute">
+        <img src="{{asset('assets/images/thumbnail_landing.png')}}" class="img-full-h" alt="">
+      </div>
+    </div>
+    @include('layout.floatingOrder')
   </div>
 </body>
 </html>
