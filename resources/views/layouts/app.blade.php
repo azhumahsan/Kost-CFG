@@ -80,5 +80,6 @@
             @yield('landing')
         </main>
     </div>
+    <!-- tes -->
 </body>
 </html>
