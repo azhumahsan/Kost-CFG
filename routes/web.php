@@ -13,10 +13,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('layouts.app');
-});
+// Route::get('/', function () {
+//     return view('layout.main');
+// });
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::middleware('auth')->prefix('')->group(function(){
+    Route::get('/', [App\Http\Controllers\MainController::class, 'index'])->name('kostcfg');
+});
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
