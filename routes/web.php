@@ -18,8 +18,9 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Auth::routes();
+Route::get('/', [App\Http\Controllers\MainController::class, 'index'])->name('kostcfg');
 
-Route::middleware('auth')->prefix('')->group(function(){
-    Route::get('/', [App\Http\Controllers\MainController::class, 'index'])->name('kostcfg');
-});
+// Route::middleware('auth')->prefix('')->group(function(){
+//     Route::get('/', [App\Http\Controllers\MainController::class, 'index'])->name('kostcfg');
+// });
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
