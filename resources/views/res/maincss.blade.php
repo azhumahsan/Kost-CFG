@@ -7,6 +7,10 @@
     margin: 0;
     padding: 0;
   }
+  html {
+    scroll-behavior: smooth;
+    font-size: 18px;
+  }
   body {
     background-color: #F7F4E9;
     position: relative;
@@ -23,6 +27,10 @@
   .cormorant {
     font-family: 'Cormorant', serif;
   }
+  .sector {
+    min-width: 100%;
+    min-height: 100vh;
+  }
   .nav-link {
     font-weight: 700;
     color: black;
@@ -31,7 +39,10 @@
     color: #FF735B;
   }
   .border-bottom {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.45) !important;
+  border-bottom: 1px solid rgb(0, 0, 0) !important;
+  }
+  .border-start {
+  border-left: 1px solid rgb(0, 0, 0) !important;
   }
   .h1 {
     font-size: 3.5rem;
@@ -53,7 +64,11 @@
     font-size: 1.5rem;
     font-weight: 400;
   }
-  #head {
+  .h6 {
+    font-size: 1rem;
+    font-weight: 400;
+  }
+  #head-content {
     height: 45.7rem;
   }
   #text-landing {
@@ -74,10 +89,26 @@
     object-fit: cover;
   }
   #box-floating-order {
-    top: 75%;
+    top: 32%;
     left: 9%;
     transform: translate(0, 0);
     height: fit-content;
     width: fit-content;
+  }
+  .box-desc {
+    display: flex;
+    align-items: center;
+    padding: 5% 15%;
+    min-height: 300px;
+  }
+  /* Fit the carousel main with the inner elements */
+  #my-carousel {
+    height: 45vw;
+    margin: 5vw auto;
+  }
+  #desc-carousel {
+    height: 5vw;
+    width: 85vw;
+    margin: 5vw auto;
   }
 </style>
