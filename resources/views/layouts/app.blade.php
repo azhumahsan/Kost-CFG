@@ -19,10 +19,6 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,500,600,700,800">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Parisienne">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cormorant">
-    <!-- FontAwesome -->
-
-    <!-- YSSlider -->
-    <link rel="stylesheet" href="dist/css/ysslider.css"/>
     <!-- animate.css -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 

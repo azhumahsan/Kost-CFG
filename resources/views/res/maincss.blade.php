@@ -101,14 +101,7 @@
     padding: 5% 15%;
     min-height: 300px;
   }
-  /* Fit the carousel main with the inner elements */
-  #my-carousel {
-    height: 45vw;
-    margin: 5vw auto;
-  }
-  #desc-carousel {
-    height: 5vw;
-    width: 85vw;
-    margin: 5vw auto;
-  }
+  /* .carousel-inner {
+    width: 80vw;
+  } */
 </style>

@@ -44,16 +44,32 @@
   </div>
 </div>
 <div class="sector border-bottom">
-  <!-- Carousel YSSlider -->
-  <div id="box-carousel">
-    <div class="ysslider">
-      <div class="item animate__animated animate__fadeIn"><img src="{{asset('images/thumbnail_landing.png')}}" /></div>
-      <div class="item animate__animated animate__fadeIn"><img src="{{asset('images/thumbnail_landing.png')}}" /></div>
-      <div class="item animate__animated animate__fadeIn"><img src="{{asset('images/thumbnail_landing.png')}}" /></div>
-      <div class="item animate__animated animate__fadeIn"><img src="{{asset('images/thumbnail_landing.png')}}" /></div>
-      <div class="controlbar">
-        <a href="javascript:void(0);" class="prev">Prev</a>
-        <a href="javascript:void(0);" class="next">Next</a>
+  <div id="box-carousel" class="row m-auto">
+    <div class="col-md-2 ps-0 position-relative">
+      <div class="d-flex justify-content-center h-100">
+        <button type="button" class="h-25 my-auto" data-bs-target="#carousel-main" data-bs-slide="prev">
+          <i class="fa-solid fa-chevron-left"></i>
+        </button>
+      </div>
+    </div>
+    <div id="carousel-main" class="carousel slide col-md-8 ps-0" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="{{ asset('images/thumbnail_landing.png') }}" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="{{ asset('images/thumbnail_landing.png') }}" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="{{ asset('images/thumbnail_landing.png') }}" class="d-block w-100" alt="...">
+        </div>
+      </div>
+    </div>
+    <div class="col-md-2 pe-0 position-relative">
+      <div class="d-flex justify-content-center h-100">
+        <button type="button" class="h-25 my-auto" data-bs-target="#carousel-main" data-bs-slide="next">
+          <i class="text-end fa-solid fa-chevron-right"></i>
+        </button>
       </div>
     </div>
   </div>
