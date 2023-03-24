@@ -20,8 +20,11 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Parisienne">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cormorant">
     <!-- FontAwesome -->
-    <link rel="stylesheet" href="https://kit.fontawesome.com/bfcc361c81.css" crossorigin="anonymous">
-    <link rel="stylesheet" href="{{asset('css/home.css')}}">
+
+    <!-- YSSlider -->
+    <link rel="stylesheet" href="dist/css/ysslider.css"/>
+    <!-- animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 
     <title>{{ config('app.name', 'Kost-CFG') }}</title>
 </head>
@@ -45,7 +48,7 @@
                         <a id="navbarDropdownUser" class="nav nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                             {{ Auth::user()->name }}
                         </a>
-                        <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownUser">
+                        <div class="dropdown-menu dropdown-menu" aria-labelledby="navbarDropdownUser">
                             <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                                 {{ __('Logout') }}
                             </a>
@@ -57,8 +60,8 @@
                 </div>
             </div>
         </nav>
-        <main class="sect">
-            @yield('landing')
+        <main>
+            @yield('content')
         </main>
     </div>
     @include('res.mainjs')

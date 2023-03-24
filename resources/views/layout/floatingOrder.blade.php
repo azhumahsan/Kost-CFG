@@ -1,4 +1,4 @@
-<div id="box-floating-order" class="position-absolute bg-light">
+<div id="box-floating-order" class="position-absolute bg-light" style="z-index: 1">
   <div id="content-floating-order" class="p-3">
     <div id="row-floating-order" class="row">
       <div class="col-md-auto px-4">
