@@ -20,6 +20,7 @@
             </div>
     </nav>
 
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     
 
     <title>login</title>
@@ -29,7 +30,7 @@
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
     <!-- Option 2: Separate Popper and Bootstrap JS -->
     <!--
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
@@ -39,13 +40,20 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-            <h2 class="fw-light" style="font-family: cormorant, sans-serif," >Welcome Back</h2>
+            <h2 class="fw-light fs-3 text-center" style="font-family: cormorant, sans-serif, width:30%" >Welcome Back</h2>
+            <h5 class="fw-lighther fs-6 text-center" style="font-family: poppins">Please enter log in details bellow </h5>
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
+                      
+                        <div class="position-relative">
+                        <i class='bx bxl-google bx-sm'></i>
+                        <i class='bx bxl-facebook bx-sm'></i>
+                        </div>
+                        
 
                         <div class="row mb-3">
-                            <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Email Address') }}</label>
+                            <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Email') }}</label>
 
                             <div class="col-md-6">
                                 <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
