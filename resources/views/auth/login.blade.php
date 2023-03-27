@@ -8,8 +8,7 @@
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-
-
+    <link rel="stylesheet" href="{{ asset('css/login.css') }}}">
    <nav style="width: 100%;" id="navbar-wrapper" class="">
             <div class="container-fluid d-block">
                 <div class="d-flex justify-content-evenly align-items-center">
@@ -25,6 +24,7 @@
 
     <title>login</title>
   </head>
+  
   <body>
     <!-- Optional JavaScript; choose one of the two! -->
 
@@ -42,17 +42,24 @@
             <div class="card">
             <h2 class="fw-light fs-3 text-center" style="font-family: cormorant, sans-serif, width:30%" >Welcome Back</h2>
             <h5 class="fw-lighther fs-6 text-center" style="font-family: poppins">Please enter log in details bellow </h5>
+            
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
-                      
-                        <div class="position-relative">
-                        <i class='bx bxl-google bx-sm'></i>
-                        <i class='bx bxl-facebook bx-sm'></i>
-                        </div>
+                       
+                        <div class="position-relative" style="top:20px;">
+                            <div class="position-absolute top-50 start-50 translate-middle">
+                              <i class='bx bxl-facebook bx-md'></i>
+                               <i class='bx bxl-google bx-md'></i>
                         
+                            </div>
+                        </div>
+<br>
+<br>
+<br>
+                        <h5 class="fw-lighther fs-6 text-center" style="font-family: poppins">Or Use Email</h5>
 
-                        <div class="row mb-3">
+                        <div class="row mb-3 ">
                             <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Email') }}</label>
 
                             <div class="col-md-6">
@@ -82,10 +89,12 @@
 
                         <div class="row mb-0">
                             <div class="col-md-8 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Login') }}
-                                </button>
-
+                                    <div class="d-grid gap-2 col-6">
+                                         <button class="btn btn-primary" type="button">Login</button>
+                                    </div>
+                                
+                            
+<br>
                                 @if (Route::has('password.request'))
                                     <a class="btn btn-link" href="{{ route('password.request') }}">
                                         {{ __('Forgot Your Password?') }}
