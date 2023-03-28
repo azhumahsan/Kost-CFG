@@ -56,9 +56,15 @@
                 </div>
             </div>
         </nav>
+        @guest
         <main>
             @yield('content')
         </main>
+        @else
+        <main>
+            @yield('admin')
+        </main>
+        @endguest
     </div>
     @include('res.mainjs')
 </body>

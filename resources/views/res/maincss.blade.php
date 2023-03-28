@@ -138,4 +138,35 @@
   .car-sect {
     width: 100vw;
   }
+  .book-grid {
+    display: grid;
+    grid-template-areas:
+      'tall tall tall normal'
+      'tall tall tall footer';
+    gap: .45rem;
+  }
+  .grid-item {
+    background-color: rgb(209, 209, 209);
+    color: white;
+    padding: 1rem;
+    font-size: 1.5rem;
+    min-height: 300px;
+    text-align: center;
+  }
+  .item-tall {
+    grid-area: tall;
+    border-top-left-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+  }
+  .item-normal {
+    grid-area: normal;
+    border-top-right-radius: 1rem;
+  }
+  .item-footer {
+    grid-area: footer;
+    border-bottom-right-radius: 1rem;
+  }
+  .support-booking {
+    padding: 3rem 0;
+  }
 </style>

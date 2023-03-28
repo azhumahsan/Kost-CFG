@@ -84,4 +84,27 @@
     </h6>
   </div>
 </div>
+<div class="sector border-bottom py-5">
+  <div class="support-booking">
+    <div class="container">
+      <div class="d-flex flex-column">
+        <div id="title-booking">
+          <h2 class="h2 cormorant fw-bold">
+            JENIS KAMAR
+            <span class="h4 cormorant">GESER KE SAMPING</span>
+          </h2>
+        </div>
+        <div class="bookings">
+          <div class="position-relative">
+            <div class="book-grid support-booking">
+              <div class="grid-item item-tall"></div>
+              <div class="grid-item item-normal"></div>
+              <div class="grid-item item-footer"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 @endsection
