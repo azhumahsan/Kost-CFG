@@ -43,35 +43,45 @@
     </div>
   </div>
 </div>
-<div class="sector border-bottom">
-  <div id="box-carousel" class="row m-auto">
-    <div class="col-md-2 ps-0 position-relative">
-      <div class="d-flex justify-content-center h-100">
-        <button type="button" class="h-25 my-auto" data-bs-target="#carousel-main" data-bs-slide="prev">
-          <i class="fa-solid fa-chevron-left"></i>
-        </button>
-      </div>
-    </div>
-    <div id="carousel-main" class="carousel slide col-md-8 ps-0" data-bs-ride="carousel">
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <img src="{{ asset('images/thumbnail_landing.png') }}" class="d-block w-100" alt="...">
-        </div>
-        <div class="carousel-item">
-          <img src="{{ asset('images/thumbnail_landing.png') }}" class="d-block w-100" alt="...">
-        </div>
-        <div class="carousel-item">
-          <img src="{{ asset('images/thumbnail_landing.png') }}" class="d-block w-100" alt="...">
+<div class="sector border-bottom py-5">
+  <div class="row car-sect my-5">
+    <div id="box-carousel" class="row m-auto p-0 w-100">
+      <div class="col-md-2 ps-0 position-relative">
+        <div class="d-flex justify-content-end h-100">
+          <button type="button" class="car-button my-auto" data-bs-target="#carousel-main" data-bs-slide="prev">
+            <i class="fa-solid fa-chevron-left"></i>
+          </button>
         </div>
       </div>
-    </div>
-    <div class="col-md-2 pe-0 position-relative">
-      <div class="d-flex justify-content-center h-100">
-        <button type="button" class="h-25 my-auto" data-bs-target="#carousel-main" data-bs-slide="next">
-          <i class="text-end fa-solid fa-chevron-right"></i>
-        </button>
+      <div id="carousel-main" class="carousel slide col-md-8 px-0" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="{{ asset('images/thumbnail_landing.png') }}" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="{{ asset('images/dump.png') }}" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="{{ asset('images/thumbnail_landing.png') }}" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="{{ asset('images/dump.png') }}" class="d-block w-100" alt="...">
+          </div>
+        </div>
+      </div>
+      <div class="col-md-2 pe-0 position-relative">
+        <div class="d-flex justify-content-start h-100">
+          <button type="button" class="car-button my-auto" data-bs-target="#carousel-main" data-bs-slide="next">
+            <i class="text-end fa-solid fa-chevron-right"></i>
+          </button>
+        </div>
       </div>
     </div>
+  </div>
+  <div class="row justify-content-center car-sect mb-5">
+    <h6 class="h6 text-center w-75">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam auctor placerat quam sit amet pharetra. Mauris in dictum turpis. Proin congue erat quis nisl euismod hendrerit.
+    </h6>
   </div>
 </div>
 @endsection

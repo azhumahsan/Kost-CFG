@@ -14,6 +14,7 @@
   body {
     background-color: #F7F4E9;
     position: relative;
+    overflow-x: hidden;
   }
   .secondary-color {
     color: #FF735B;
@@ -29,7 +30,7 @@
   }
   .sector {
     min-width: 100%;
-    min-height: 100vh;
+    /* min-height: 100vh; */
   }
   .nav-link {
     font-weight: 700;
@@ -101,7 +102,40 @@
     padding: 5% 15%;
     min-height: 300px;
   }
-  /* .carousel-inner {
-    width: 80vw;
-  } */
+  .carousel-inner {
+    height: fit-content;
+    position: relative;
+  }
+  .carousel-item {
+    height: 0;
+    padding-bottom: 56.25%;
+  }
+  .carousel-item img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+    object-fit: cover;
+  }
+  .car-button {
+    width: 2.5rem;
+    height: 2.5rem;
+    background-color: transparent;
+    border: none;
+  }
+  .car-button>i {
+    font-size: 1.5rem;
+  }
+  .car-button>i::before {
+    color: #FF735B;
+    transition: 300ms all ease-in-out;
+  }
+  .car-button:hover>i::before {
+    color: black;
+    transition: 300ms all ease-in-out;
+  }
+  .car-sect {
+    width: 100vw;
+  }
 </style>
