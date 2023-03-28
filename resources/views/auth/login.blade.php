@@ -40,26 +40,15 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-            <h2 class="fw-light fs-3 text-center" style="font-family: cormorant, sans-serif, width:30%" >Welcome Back</h2>
-            <h5 class="fw-lighther fs-6 text-center" style="font-family: poppins">Please enter log in details bellow </h5>
             
                 <div class="card-body">
+                <h2 class="fw-light fs-3 text-center" style="font-family: cormorant, sans-serif, width:30%" >Welcome Back</h2>
+                <h5 class="fw-lighther fs-6 text-center" style="font-family: poppins">Please enter log in details bellow </h5>
+                <br>
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
                        
-                        <div class="position-relative" style="top:20px;">
-                            <div class="position-absolute top-50 start-50 translate-middle">
-                              <i class='bx bxl-facebook bx-md'></i>
-                               <i class='bx bxl-google bx-md'></i>
-                        
-                            </div>
-                        </div>
-<br>
-<br>
-<br>
-                        <h5 class="fw-lighther fs-6 text-center" style="font-family: poppins">Or Use Email</h5>
-
-                        <div class="row mb-3 ">
+                        <div class="row mb-3">
                             <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Email') }}</label>
 
                             <div class="col-md-6">
@@ -87,21 +76,28 @@
                             </div>
                         </div>
 
-                        <div class="row mb-0">
-                            <div class="col-md-8 offset-md-4">
+                        <div class="row mb-2 flex-column">
+                            <div class="d-flex justify-content-center my-2">
+                                <img src="{{ asset('images/google.jpeg') }}" width="35" style="padding-right: 5px; padding-bottom: 5px;">
+                                <img src="{{ asset('images/facebook.jpeg') }}" width="35" style="padding-left: 5px; padding-bottom: 5px;">
+                            </div>
+                            <div class="col-md-8 offset-md-4 flex">
                                     <div class="d-grid gap-2 col-6">
                                          <button class="btn btn-primary" type="button">Login</button>
                                     </div>
-                                
-                            
-<br>
-                                @if (Route::has('password.request'))
-                                    <a class="btn btn-link" href="{{ route('password.request') }}">
-                                        {{ __('Forgot Your Password?') }}
-                                    </a>
-                                @endif
                             </div>
+                                @if (Route::has('password.request'))
+                                    <div class="btn btn-link offset-md-4 text-start w-auto" style="margin-start: 33,333%;" href="{{ route('password.request') }}">
+                                        <a href="">
+                                            {{ __('Forgot Your Password?') }}
+                                        </a>
+                                    </div>
+                                @endif
                         </div>
+                        
+
+                        
+                        
                     </form>
                 </div>
             </div>
