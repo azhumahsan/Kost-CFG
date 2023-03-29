@@ -9,7 +9,7 @@
   }
   html {
     scroll-behavior: smooth;
-    font-size: 18px;
+    font-size: 16px;
   }
   body {
     background-color: #F7F4E9;
@@ -69,17 +69,11 @@
     font-size: 1rem;
     font-weight: 400;
   }
-  #head-content {
-    height: 45.7rem;
-  }
-  #text-landing {
-    top: 17%;
-    left: 18%;
+  #wrapper-text-landing {
+    margin-left: 10vw;
+    margin-bottom: 5vh;
   }
   #box-img-landing {
-    top: 0;
-    left: 50%;
-    transform: translate(0, 0);
     height: 51.25rem;
     max-width: 50vw;
     overflow: hidden;
@@ -90,7 +84,7 @@
     object-fit: cover;
   }
   #box-floating-order {
-    top: 32%;
+    top: 80%;
     left: 9%;
     transform: translate(0, 0);
     height: fit-content;
@@ -143,7 +137,7 @@
     grid-template-areas:
       'tall tall tall normal'
       'tall tall tall footer';
-    gap: .45rem;
+    gap: .8rem;
   }
   .grid-item {
     background-color: rgb(209, 209, 209);
@@ -167,6 +161,20 @@
     border-bottom-right-radius: 1rem;
   }
   .support-booking {
-    padding: 3rem 0;
+    padding: 2.5rem 0;
+  }
+  .support-shadow {
+    /* offset-x | offset-y | blur-radius | spread-radius | color */
+    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
+  }
+  .wrapper-room-left {
+    float: left;
+  }
+  .wrapper-room-right {
+    float: right;
+  }
+  .order-card {
+    background-color: #f8f9fa;
+    padding: 1rem
   }
 </style>
