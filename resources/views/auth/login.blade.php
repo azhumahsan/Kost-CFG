@@ -73,26 +73,50 @@
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
-                            </div>
-                        </div>
 
-                        <div class="row mb-2 flex-column">
-                            <div class="d-flex justify-content-center my-2">
-                                <img src="{{ asset('images/google.jpeg') }}" width="35" style="padding-right: 5px; padding-bottom: 5px;">
-                                <img src="{{ asset('images/facebook.jpeg') }}" width="35" style="padding-left: 5px; padding-bottom: 5px;">
-                            </div>
-                            <div class="col-md-8 offset-md-4 flex">
-                                    <div class="d-grid gap-2 col-6">
-                                         <button class="btn btn-primary" type="button">Login</button>
-                                    </div>
-                            </div>
                                 @if (Route::has('password.request'))
-                                    <div class="btn btn-link offset-md-4 text-start w-auto" style="margin-start: 33,333%;" href="{{ route('password.request') }}">
+                                    <div class="btn btn-link offset-md-6 text-start w-auto" style="margin-start: 33,333%;" href="{{ route('password.request') }}">
                                         <a href="">
                                             {{ __('Forgot Your Password?') }}
                                         </a>
                                     </div>
                                 @endif
+
+                            </div>
+                        </div>
+                    
+                        
+
+                        <div class="row mb-2 flex-column">
+                            
+
+                            <div class="col-md-8 offset-md-4 flex">
+                                    <div class="d-grid gap-2 col-6">
+                                         <button class="btn btn-primary" type="button">Login</button>
+                                    </div>
+                            </div>
+
+                                <br>
+                                <h5 class="fw-light fs-6 text-center" style="font-family: poppins">Or with</h5>
+
+                            <div class="d-flex justify-content-center my-2">
+                                <img src="{{ asset('images/google.jpeg') }}" width="35" style="padding-right: 5px; padding-bottom: 5px;">
+                                <img src="{{ asset('images/facebook.jpeg') }}" width="35" style="padding-left: 5px; padding-bottom: 5px;">
+                            </div>
+
+                           
+  
+                            <div class="d-flex justify-content-center align-items-center my-2">
+                                <h5 class="fw-light fs-6 text-center m-0" style="font-family: poppins">
+                                    Don't have Account?
+                                    @if (Route::has('password.request'))
+                                    <a href="" class="">
+                                        {{ __('Sign Up') }}
+                                    </a>
+                                    @endif
+                                </h5>
+                            </div>
+                            </div>
                         </div>
                         
 
