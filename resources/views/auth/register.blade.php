@@ -8,7 +8,7 @@
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="{{ asset('css/login.css') }}}">
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}}">
    <nav style="width: 100%;" id="navbar-wrapper" class="">
             <div class="container-fluid d-block">
                 <div class="d-flex justify-content-evenly align-items-center">
@@ -22,7 +22,7 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     
 
-    <title>login</title>
+    <title>Register</title>
   </head>
   
   <body>
@@ -42,57 +42,56 @@
             <div class="card">
             
                 <div class="card-body">
-                <h2 class="fw-light fs-3 text-center" style="font-family: cormorant, sans-serif, width:30%" >Register</h2>
-                <h5 class="fw-lighther fs-6 text-center" style="font-family: poppins">Please enter register details bellow </h5>
+                <h2 class="fw-light fs-3 text-center" style="font-family: cormorant, sans-serif, width:30%" >Create Account</h2>
+                <h5 class="fw-lighther fs-6 text-center" style="font-family: poppins">Please create acoount details bellow </h5>
                 <br>
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                            <label for="inputName" class="form-label">Name</label>
+                                <input type="text" class="form-control"aria-label="Name">
+                            </div>
+                            <div class="col-md-6">
+                            <label for="inputEmail4" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="inputEmail4">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="inputPassword4" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="inputPassword4">
+                        </div>
+                        </div>
+<br>
                        
-                        <div class="row mb-3">
-                            <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Email') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
-
-                                @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="row mb-3">
-                            <label for="password" class="col-md-4 col-form-label text-md-end">{{ __('Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
-
-                                @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
                         <div class="row mb-2 flex-column">
+                            <div class="col-md-8 offset-md-4 flex">
+                                    <div class="d-grid gap-2 col-6">
+                                         <button class="btn btn-primary" type="button">Create your account</button>
+                                    </div>
+                            </div>
+
+                            <div class="d-flex justify-content-center align-items-center my-2">
+                                <h5 class="fw-light fs-6 text-center m-0" style="font-family: poppins">
+                                    Alredy have an Account?
+                                    @if (Route::has('password.request'))
+                                    <a href="" class="">
+                                        {{ __('Sign in') }}
+                                    </a>
+                                    @endif
+                                </h5>
+                            </div>
+
+                            <br>
+
+                            <h5 class="fw-light fs-6 text-center" style="font-family: poppins">Or with</h5>
+
+                           
+
                             <div class="d-flex justify-content-center my-2">
                                 <img src="{{ asset('images/google.jpeg') }}" width="35" style="padding-right: 5px; padding-bottom: 5px;">
                                 <img src="{{ asset('images/facebook.jpeg') }}" width="35" style="padding-left: 5px; padding-bottom: 5px;">
                             </div>
-                            <div class="col-md-8 offset-md-4 flex">
-                                    <div class="d-grid gap-2 col-6">
-                                         <button class="btn btn-primary" type="button">Login</button>
-                                    </div>
-                            </div>
-                                @if (Route::has('password.request'))
-                                    <div class="btn btn-link offset-md-4 text-start w-auto" style="margin-start: 33,333%;" href="{{ route('password.request') }}">
-                                        <a href="">
-                                            {{ __('Forgot Your Password?') }}
-                                        </a>
-                                    </div>
-                                @endif
+
                         </div>
                         
 
