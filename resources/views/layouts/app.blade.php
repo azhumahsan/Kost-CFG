@@ -16,9 +16,9 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <!-- Google fonts -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,500,600,700,800">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Parisienne">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cormorant">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Parisienne:300,400,600,700">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cormorant:300,400,600,700">
     <!-- animate.css -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 
@@ -27,35 +27,6 @@
 <body>
     @include('res.maincss')
     <div id="app">
-        <nav style="width: 50%;" id="navbar-wrapper" class="navbar navbar-expand-lg navbar-light border-bottom">
-            <div class="container-fluid d-block">
-                <div class="d-flex justify-content-evenly align-items-center">
-                    <a style="height: 4.5rem;" class="navbar-brand text-center text-center d-block m-0" id="nav-left" href="#head">
-                        <img src="{{asset('images/logo_png.png')}}" alt="" class="img-fluid h-100">
-                    </a>
-                    @guest
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class="nav nav-link">{{ __('Create Account') }}</a>
-                        @endif
-                        @if (Route::has('login'))
-                            <a href="{{ route('login') }}" class="nav nav-link">{{ __('Login') }}</a>
-                        @endif
-                    @else
-                        <a id="navbarDropdownUser" class="nav nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                            {{ Auth::user()->name }}
-                        </a>
-                        <div class="dropdown-menu dropdown-menu" aria-labelledby="navbarDropdownUser">
-                            <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                                {{ __('Logout') }}
-                            </a>
-                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                @csrf
-                            </form>
-                        </div>
-                    @endguest
-                </div>
-            </div>
-        </nav>
         @guest
         <main>
             @yield('content')
