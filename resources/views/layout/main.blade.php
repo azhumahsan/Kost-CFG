@@ -146,8 +146,8 @@
             <div class="wrapper-room-right">
               <div class="support-shadow rounded-1 order-card d-flex flex-column">
                 <h2 class="h2 cormorant">Rp 1.900.000{{-- Here goes the price data --}}<span class="h5 cormorant"> / month</span></h2>
-                <a href="" class="btn bg-secondary-color rounded-0 mt-3 py-2 h5 text-light fw-bold">
-                  CEK DETAIL KAMAR
+                <a href="" class="btn bg-secondary-color rounded-0 mt-3 py-2 h5 text-light">
+                  DETAIL
                 </a>
               </div>
             </div>
