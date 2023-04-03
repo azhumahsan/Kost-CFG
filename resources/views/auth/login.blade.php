@@ -75,7 +75,7 @@
                                 @enderror
 
                                 @if (Route::has('password.request'))
-                                    <div class="btn btn-link offset-md-6 text-start w-auto" style="margin-start: 33,333%;" href="{{ route('password.request') }}">
+                                    <div class="btn btn-link text-end px-0 w-100" href="{{ route('password.request') }}">
                                         <a href="">
                                             {{ __('Forgot Your Password?') }}
                                         </a>
