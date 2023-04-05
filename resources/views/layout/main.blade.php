@@ -84,6 +84,7 @@
       </div>
       <div id="carousel-main" class="carousel slide col-md-8" data-bs-ride="carousel">
         <div class="carousel-inner">
+          {{-- Taruh @foreach disini --}}
           <div class="carousel-item active">
             <img src="{{ asset('images/thumbnail_landing.png') }}" class="d-block w-100" alt="...">
           </div>
@@ -113,6 +114,7 @@
     </h6>
   </div>
 </div>
+<!-- Carousel section -->
 <div class="sector border-bottom py-5">
   <div class="support-booking">
     <div class="container">
@@ -152,6 +154,34 @@
               </div>
             </div>
           </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End of carousel section -->
+<!-- Our Facility section -->
+<div class="sector border-bottom py-5">
+  <div class="container">
+    <div id="facility-title">
+      <h2 class="h2 cormorant text-center fw-bold">
+        Fasilitas-Fasilitas Umum<br>Kost CFG
+      </h2>
+      <br>
+      <h5 class="h5 text-center">
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore eos iure tempora illo architecto, vel porro aliquid dolore ad nulla maiores distinctio molestias in tenetur culpa officiis modi doloremque neque?
+      </h5>
+    </div>
+    <div id="facility-icon-title" class="my-5">
+      <div class="d-flex justify-content-center align-items-center">
+        <div class="box-f-image">
+          <img src="{{ asset('images/car_park.svg') }}" alt="">
+        </div>
+        <div id="mid-f-support" class="box-f-image">
+          <img src="{{ asset('images/laundry_machine.svg') }}" alt="">
+        </div>
+        <div class="box-f-image">
+          <img src="{{ asset('images/service_customer.svg') }}" alt="">
         </div>
       </div>
     </div>

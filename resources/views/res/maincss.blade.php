@@ -9,7 +9,7 @@
   }
   html {
     scroll-behavior: smooth;
-    font-size: 16px;
+    font-size: 1vw;
   }
   body {
     background-color: #F7F4E9;
@@ -144,7 +144,7 @@
     color: white;
     padding: 1rem;
     font-size: 1.5rem;
-    min-height: 300px;
+    min-height: 18vw;
     text-align: center;
   }
   .item-tall {
@@ -176,5 +176,12 @@
   .order-card {
     background-color: #f8f9fa;
     padding: 1rem
+  }
+  .box-f-image {
+    padding: 0 6vw;
+  }
+  #mid-f-support {
+    border-left: #FF735B 1px solid;
+    border-right: #FF735B 1px solid;
   }
 </style>
