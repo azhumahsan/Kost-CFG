@@ -5,7 +5,7 @@
   <div id="head-content" class="row p-0 m-auto position-relative">
     <div id="head-left-content" class="col-md-6 p-0 border-bottom">
       <div id="wrapper-left" class="d-flex flex-column h-100">
-        <nav id="navbar-wrapper" class="navbar navbar-expand-lg navbar-light border-bottom">
+        <nav id="navbar-wrapper" class="shadow-0 navbar navbar-expand-lg navbar-light border-bottom">
             <div class="container-fluid d-block">
                 <div class="d-flex justify-content-evenly align-items-center">
                     <a style="height: 4.5rem;" class="navbar-brand text-center text-center d-block m-0" id="nav-left" href="#head">
@@ -172,7 +172,7 @@
         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore eos iure tempora illo architecto, vel porro aliquid dolore ad nulla maiores distinctio molestias in tenetur culpa officiis modi doloremque neque?
       </h5>
     </div>
-    <div id="facility-icon-title" class="my-5">
+    <div id="facility-icon-title">
       <div class="d-flex justify-content-center align-items-center">
         <div class="box-f-image">
           <img src="{{ asset('images/car_park.svg') }}" alt="">
@@ -185,6 +185,62 @@
         </div>
       </div>
     </div>
+    <div id="facility-content">
+      <div class="row w-100 mx-auto">
+        <div class="col-md-4 p-3">
+          <div class="facility-desc">
+            <div class="img-facility">
+              <img src="{{ asset('images/tmpt_parkir.png') }}" alt="">
+            </div>
+            <div class="text-desc-facility my-5">
+              <h3 class="h3 cormorant text-center secondary-color">Tempat Parkir</h3>
+              <h6 class="h6 text-center mt-3 mb-0">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore eos iure tempora illo architecto.
+              </h6>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 p-3">
+          <div class="facility-desc">
+            <div class="img-facility">
+              <img src="{{ asset('images/kantin.png') }}" alt="">
+            </div>
+            <div class="text-desc-facility my-5">
+              <h3 class="h3 cormorant text-center secondary-color">Kantin</h3>
+              <h6 class="h6 text-center mt-3 mb-0">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore eos iure tempora illo architecto.
+              </h6>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 p-3">
+          <div class="facility-desc">
+            <div class="img-facility">
+              <img src="{{ asset('images/taman.png') }}" alt="">
+            </div>
+            <div class="text-desc-facility my-5">
+              <h3 class="h3 cormorant text-center secondary-color">Taman</h3>
+              <h6 class="h6 text-center mt-3 mb-0">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore eos iure tempora illo architecto.
+              </h6>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
+<!-- end of "Our Facility" Section -->
+<!-- Contact us Section -->
+<div class="sector border-bottom py-5">
+  <div class="container">
+    <div id="contact-title">
+      <h2 class="h2 cormorant fw-bold">
+        HUBUNGI KAMI
+        <span class="h4 cormorant">MELALUI</span>
+      </h2>
+    </div>
+  </div>
+</div>
+@include('layout.footer')
 @endsection

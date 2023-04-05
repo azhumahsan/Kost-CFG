@@ -21,6 +21,9 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cormorant:300,400,600,700">
     <!-- animate.css -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <!-- MDB -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.2.0/mdb.min.css" rel="stylesheet"/>
+    
 
     <title>{{ config('app.name', 'Kost-CFG') }}</title>
 </head>
