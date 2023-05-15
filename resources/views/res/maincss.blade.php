@@ -69,6 +69,10 @@
     font-size: 1rem;
     font-weight: 400;
   }
+  .nav {
+    --mdb-nav-link-color: black;
+    --mdb-nav-link-hover-color: black;
+  }
   #wrapper-text-landing {
     margin-left: 10vw;
     margin-bottom: 5vh;

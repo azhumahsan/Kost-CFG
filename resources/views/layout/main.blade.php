@@ -22,7 +22,7 @@
                         <a id="navbarDropdownUser" class="nav nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                             {{ Auth::user()->name }}
                         </a>
-                        <div class="dropdown-menu dropdown-menu" aria-labelledby="navbarDropdownUser">
+                        <div class="dropdown-menu dropdown-menu" aria-labelledby="navbarDropdownUser" style="left: 60%; top: 80%; opacity; .5:">
                             <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                                 {{ __('Logout') }}
                             </a>
@@ -122,7 +122,7 @@
         <div id="title-booking">
           <h2 class="h2 cormorant fw-bold">
             JENIS KAMAR
-            <span class="h4 cormorant">GESER KE SAMPING</span>
+            <span class="h4 cormorant">Top in week</span>
           </h2>
         </div>
         <div class="bookings d-flex w-100 flex-column">
