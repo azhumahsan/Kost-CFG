@@ -16,6 +16,9 @@
     position: relative;
     overflow-x: hidden;
   }
+  .hidden {
+    display: none;
+  }
   .secondary-color {
     color: #FF735B;
   }
@@ -204,5 +207,13 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+  }
+  @media only screen and (max-width: 1024px) {
+    .h6 {
+      font-size: 1.5rem;
+    }
+    .nav-link {
+      font-size: 1.25rem;
+    }
   }
 </style>

@@ -6,3 +6,28 @@
 <script src="https://kit.fontawesome.com/bfcc361c81.js" crossorigin="anonymous"></script>
 <!-- MDB -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.2.0/mdb.min.js"></script>
+<!-- Custom JS -->
+<script>
+  // use "debounce" method
+  var resizeTimer;
+
+  $(window).on('resize', function() {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(function() {
+      // Find screen width ratio
+      var sWidth = $(window).width();
+      var sHeight = $(window).height();
+      // check if screen width is less than 769px (before tablet size)
+      if (sWidth < 768) {
+        $(".desktop").toggleClass("hidden", true);
+        $(".mobile").toggleClass("hidden", false);
+      } else {
+        $(".desktop").toggleClass("hidden", false);
+        $(".mobile").toggleClass("hidden", true);
+      }
+    }, 200); // Adjust the debounce interval as needed
+  });
+
+  // Trigger the resize event initially to get the initial window size
+  $(window).trigger('resize');
+</script>

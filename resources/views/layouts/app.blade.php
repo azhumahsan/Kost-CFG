@@ -15,15 +15,9 @@
 <body>
     @include('res.maincss')
     <div id="app">
-        @guest
         <main>
             @yield('content')
         </main>
-        @else
-        <main>
-            @yield('content')
-        </main>
-        @endguest
     </div>
     @include('res.mainjs')
 </body>
