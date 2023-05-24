@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RoomController;
+use App\Http\Controllers\AdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,8 +22,10 @@ use App\Http\Controllers\RoomController;
 Auth::routes();
 Route::get('/', [App\Http\Controllers\MainController::class, 'index'])->name('kostcfg');
 
+
 Route::get('/room', [RoomController::class, 'index']);
-
 Auth::routes();
-
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
+Route::get('/admin', [AdminController::class, 'index']);
