@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RoomController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\KamarController;
+use App\Http\Controllers\CustomerController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,3 +31,5 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 
 Route::get('/admin', [AdminController::class, 'index']);
+Route::resource('/kamar', KamarController::class);
+Route::resource('/customer', CustomerController::class);

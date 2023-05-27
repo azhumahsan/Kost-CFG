@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateUsersTable extends Migration
+class CreatePembayaranTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,14 @@ class CreateUsersTable extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('pembayaran', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
-            $table->string('email')->unique();
-            $table->string('password');
-            $table->enum('level', ['admin', 'customer'])->default('customer');
+            $table->integer('id_booking')->unsigned();
+            $table->string('bulan');
+            $table->string('bukti_bayar');
             $table->timestamps();
+
+            $table->foreign('id_booking')->on('booking')->references('id')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 
@@ -30,6 +31,6 @@ class CreateUsersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('pembayaran');
     }
 }

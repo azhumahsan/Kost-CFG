@@ -7,6 +7,10 @@
 <!-- MDB -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.2.0/mdb.min.js"></script>
 <!-- Custom JS -->
+
+<!-- CkEditor -->
+<script src="https://cdn.ckeditor.com/4.20.2/standard-all/ckeditor.js"></script>
+
 <script>
   // use "debounce" method
   var resizeTimer;
@@ -31,3 +35,14 @@
   // Trigger the resize event initially to get the initial window size
   $(window).trigger('resize');
 </script>
+
+<script>
+        var konten = document.getElementById("spesifikasi");
+        CKEDITOR.replace(konten, {
+            width: '100%',
+            extraPlugins: 'editorplaceholder',
+            editorplaceholder: 'Deskripsi spesifikasi kamar...',
+            uiColor: '#CCEAEE'
+        });
+        CKEDITOR.config.allowedContent = true;
+    </script>
