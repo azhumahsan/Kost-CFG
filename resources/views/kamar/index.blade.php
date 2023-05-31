@@ -1,6 +1,10 @@
 @extends('layouts.template')
 
 @section('content')
+<div class="d-sm-flex align-items-center justify-content-between mb-4">
+    <h1 class="h3 mb-0 text-gray-800 mt-4">Data Kamar</h1>
+</div>
+
 <div class="container mt-4 mb-5">
     <div class="row justify-content-center">
         <div class="col-md-12">
@@ -12,7 +16,7 @@
                     <form action="{{route('kamar.store')}}" method="post" enctype="multipart/form-data">
                         @csrf
                         <div class="row">
-                            <div class="col-md-6">
+                            <div class="col-md-4">
                                 <div class="input-group mb-3">
                                     <div class="input-group-prepend">
                                         <span class="input-group-text">Gedung</span>
@@ -24,12 +28,17 @@
                                     </select>
                                 </div>
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-4">
                                 <div class="input-group mb-3">
                                     <div class="input-group-prepend">
                                         <span class="input-group-text">Lantai</span>
                                     </div>
-                                    <input type="number" name="lantai" class="form-control" placeholder="Lantai">
+                                    <select class="custom-select" name="lantai">
+                                        <option selected>Choose...</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                    </select>                                
                                 </div>
                             </div>
                             <div class="col-md-4">
@@ -37,17 +46,16 @@
                                     <div class="input-group-prepend">
                                         <span class="input-group-text">No Kamar</span>
                                     </div>
-                                    <input type="text" name="nomor_kamar" class="form-control"
-                                        placeholder="No Kamar">
+                                    <input type="text" name="nomor_kamar" class="form-control" placeholder="No Kamar">
                                 </div>
                             </div>
-                            <div class="col-md-4">
+                            <div class="col-md-6">
                                 <div class="input-group mb-3">
                                     <input type="file" name="foto" class="form-control" id="inputGroupFile0">
                                     <label class="input-group-text" for="inputGroupFile02">Foto Kamar</label>
                                 </div>
                             </div>
-                            <div class="col-md-4">
+                            <div class="col-md-6">
                                 <div class="input-group mb-3">
                                     <div class="input-group-prepend">
                                         <span class="input-group-text">Harga</span>
@@ -57,7 +65,8 @@
                             </div>
                             <div class="col-md-12">
                                 <div class="input-group mb-3">
-                                    <textarea class="form-control" placeholder="Spesifikasi" name="spesifikasi" id="spesifikasi"></textarea>
+                                    <textarea class="form-control" placeholder="Spesifikasi" name="spesifikasi"
+                                        id="spesifikasi"></textarea>
                                 </div>
                             </div>
                             <div class="col-md-12">
@@ -94,7 +103,8 @@
                                             {{method_field('DELETE')}}
                                             <button type="submit" class="btn btn-danger"
                                                 onclick="return confirm('Apakah anda akan menghapus kamar {{$row->nomor_kamar}} ?');">Hapus</button>
-                                            <a href="{{route('kamar.edit',$row->id)}}" class="btn btn-warning">Edit</a>
+                                            <a href="{{route('kamar.edit',$row->id)}}"
+                                                class="btn btn-warning">Edit</a>
                                             <a href="{{route('kamar.show',$row->id)}}"
                                                 class="btn btn-success">Detail</a>
                                         </form>

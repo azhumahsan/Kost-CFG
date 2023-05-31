@@ -14,16 +14,20 @@ class CreateBookingTable extends Migration
     public function up()
     {
         Schema::create('booking', function (Blueprint $table) {
+            // nama orang, no hp, nomor kamar, gedung, lantai, 
             $table->increments('id');
             $table->integer('id_kamar')->unsigned();
-            $table->integer('id_customer')->unsigned();
-            $table->date('start_date');
-            $table->date('end_date');
-            $table->integer('bukti');
+            // $table->integer('id_customer')->unsigned();
+            $table->string('nama');
+            $table->string('no_hp');
+            $table->string('start_date');
+            $table->string('end_date');
+            $table->string('harga');
+            $table->string('bukti');
             $table->timestamps();
 
             $table->foreign('id_kamar')->on('kamar')->references('id')->onDelete('cascade')->onUpdate('cascade');
-            $table->foreign('id_customer')->on('customer')->references('id')->onDelete('cascade')->onUpdate('cascade');
+            // $table->foreign('id_customer')->on('customer')->references('id')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 

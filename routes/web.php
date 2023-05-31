@@ -5,6 +5,8 @@ use App\Http\Controllers\RoomController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\KamarController;
 use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\BookedController;
+use App\Http\Controllers\SearchController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,6 +32,8 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 
-Route::get('/admin', [AdminController::class, 'index']);
+Route::resource('/admin', AdminController::class);
 Route::resource('/kamar', KamarController::class);
-Route::resource('/customer', CustomerController::class);
+// Route::resource('/customer', CustomerController::class);
+Route::resource('/booking', BookedController::class);
+Route::resource('/search', SearchController::class);

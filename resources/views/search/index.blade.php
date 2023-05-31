@@ -1,33 +1,37 @@
 @extends('layouts.template')
 
 @section('content')
-<div class="side mb-4">
-    <input type="checkbox" id="check">
-    <div class="navbar">
-        <label for="check">
-            <i class="bi bi-filter-left" id="show"></i>
-        </label>
-    </div>
-    <h1 class="h3 mb-0 text-gray-800 mt-4">Dashboard</h1>
+<div class="col-md-12 mt-4 mb-3">
+    <form action="/search" method="get">
+        <div class="input-group">
+            <input type="text" name="keyword" value="{{Request::get('keyword')}}"
+                class="form-control" placeholder="Cari apa..?">
+            <div class="input-group-append">
+                <button class="btn btn-primary" type="submit">Cari</button>
+            </div>
+        </div>
+    </form>
 </div>
-
-<div class="col-lg-12">
-    <div class="card mt-4">
+<div class="col-md-12">
+    @if(Request::get('keyword'))
+    <div class="card">
         <div class="card-body">
+            <div class="alert alert-success">
+                Hasil Pencarian dari {{Request::get('keyword')}}
+            </div>
             <div class="table-responsive">
-                <table class="table table-strip" id="myTable">
-                    <thead class="col-md-12">
-                        <th class="col-md-4">Nama</th>
-                        <th class="col-md-4">No Kamar</th>
-                        <th class="col-md-4">Pilihan</th>
+                <table class="table table-hover">
+                    <thead>
+                        <th>Nama</th>
+                        <th>Nomor Kamar</th>
+                        <th>Pilihan</th>
                     </thead>
                     <tbody>
-
                         @foreach($booking as $row)
                         <tr>
-                            <td>{{$row->nama}}</td>
-                            <td>{{$row->admin->nomor_kamar}}</td>
-                            <td>
+                            <td class="col-md-4">{{$row->nama}}</td>
+                            <td class="col-md-4">{{$row->nomor_kamar}}</td>
+                            <td class="col-md-4">
                                 <form action="{{route('booking.destroy',$row->id)}}" method="post">
                                     @csrf
                                     {{method_field('DELETE')}}
@@ -44,5 +48,6 @@
             </div>
         </div>
     </div>
+    @endif
 </div>
 @endsection

@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Booked;
 use App\Models\Kamar;
+use App\Models\User;
 use Illuminate\Http\Request;
 
-class KamarController extends Controller
+class BookedController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,14 +16,16 @@ class KamarController extends Controller
      */
 
      public function __construct()
-     {
-         $this->middleware('auth');
-     }
-    
+    {
+        $this->middleware('auth');
+    }
+
     public function index()
     {
+        $booking = Booked::all();
         $kamar = Kamar::all();
-        return view('kamar.index', compact('kamar'));
+        $user = User::all();
+        return view('booked.index', compact('booking', 'kamar', 'user'));
     }
 
     /**
@@ -44,78 +48,79 @@ class KamarController extends Controller
     {
         $input = $request->all();
 
-        if($request->hasFile('foto'))
+        if($request->hasFile('bukti'))
         {
-            $destination_path = 'public/images/kamar';
-            $image = $request->file('foto');
+            $destination_path = 'public/images/booked';
+            $image = $request->file('bukti');
             $name = $image->getClientOriginalName();
-            $path = $request->file('foto')->storeAs($destination_path, $name);
-            $input['foto'] = $name;
+            $path = $request->file('bukti')->storeAs($destination_path, $name);
+            $input['bukti'] = $name;
         }
 
-        Kamar::create($input);
-        return redirect('/kamar');
+        Booked::create($input);
+        return redirect('/booking');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Kamar  $kamar
+     * @param  \App\Models\Booked  $booked
      * @return \Illuminate\Http\Response
      */
     public function show($id)
     {
-        $kamar = Kamar::find($id);
-        return view('kamar.detail', compact('kamar'));
+        $booking = Booked::find($id);
+        return view('booked.detail', compact('booking'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Kamar  $kamar
+     * @param  \App\Models\Booked  $booked
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
     {
-        $kamar = Kamar::find($id);
-        return view('kamar.edit', compact('kamar'));
+        $booking = Booked::find($id);
+        $kamar = Kamar::all();
+        return view('booked.edit', compact('booking','kamar'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Kamar  $kamar
+     * @param  \App\Models\Booked  $booked
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
     {
-        $kamar = Kamar::find($id);
+        $booking = Booked::findOrFail($id);
         $data = $request->all();
 
-        if($request->hasFile('foto'))
+        if($request->hasFile('bukti'))
         {
-            $destination_path = 'public/images/kamar';
-            $image = $request->file('foto');
+            $destination_path = 'public/images/booked';
+            $image = $request->file('bukti');
             $name = $image->getClientOriginalName();
-            $path = $request->file('foto')->storeAs($destination_path, $name);
-            $data['foto'] = $name;
+            $path = $request->file('bukti')->storeAs($destination_path, $name);
+            $data['bukti'] = $name;
         }
 
-        $kamar->update($data);
-        return redirect('/kamar');
+        $booking->update($data);
+        return redirect('/admin');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Kamar  $kamar
+     * @param  \App\Models\Booked  $booked
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
-        $data = Kamar::find($id);
+        $data = Booked::find($id);
         $data->delete();
-        return redirect('/kamar');
+        return redirect('/admin');
     }
 }

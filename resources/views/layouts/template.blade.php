@@ -13,6 +13,11 @@
     <link href="{{asset('css/fontawesome-free/css/all.min.css')}}" rel="stylesheet" type="text/css">
     <link href="{{asset('css/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet" type="text/css">
     <link href="{{asset('css/ruang-admin.min.css')}}" rel="stylesheet">
+    <link href="{{asset('css/style.css')}}" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css"
+        integrity="sha512-ZnR2wlLbSbr8/c9AgLg3jQPAattCUImNsae6NHYnS9KrIwRdcY9DxFotXhNAKIKbAXlRnujIqUWoXXwqyFOeIQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- JQuery 3.x -->
     <script src="https://code.jquery.com/jquery-3.6.3.min.js"
         integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
@@ -50,29 +55,47 @@
             <div class="sidebar-heading">
                 Features
             </div>
-            <li class="nav-item">
+            <!-- <li class="nav-item">
                 <a class="nav-link collapsed" href="/customer" data-toggle="collapse" data-target="#collapseBootstrap"
                     aria-expanded="true" aria-controls="collapseBootstrap">
                     <i class="far fa-fw fa-window-maximize"></i>
                     <span>Customer</span>
                 </a>
-            </li>
+            </li> -->
             <li class="nav-item">
                 <a class="nav-link collapsed" href="/kamar" data-toggle="collapse" data-target="#collapseForm"
                     aria-expanded="true" aria-controls="collapseForm">
-                    <i class="fab fa-fw fa-wpforms"></i>
+                    <i class="fas fa-fw fa-house"></i>
                     <span>Kamar</span>
                 </a>
             </li>
-            <hr class="sidebar-divider">
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="/booking" data-toggle="collapse" data-target="#collapseForm"
+                    aria-expanded="true" aria-controls="collapseForm">
+                    <i class="fab fa-fw fa-wpforms"></i>
+                    <span>Booking</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="/search" data-toggle="collapse" data-target="#collapseForm"
+                    aria-expanded="true" aria-controls="collapseForm">
+                    <i class="fas fa-fw fa-search"></i>
+                    <span>Search</span>
+                </a>
+            </li>
             <li class="nav-item">
                 <form action="/logout" method="POST">
                     @csrf
-                    <button class="btn btn-danger ml-3">Logout</button>
+                    <button class="btn btn-danger ml-3 mt-3 mb-4">Logout</button>
                 </form>
             </li>
+            <hr class="sidebar-divider">
+            <div class="text-center d-none d-md-inline">
+                <button class="rounded-circle border-0" id="sidebarToggle"></button>
+            </div>
         </ul>
         <!-- Sidebar -->
+
         <div id="content-wrapper" class="d-flex flex-column">
             <div id="content">
 
@@ -115,7 +138,19 @@
             uiColor: '#CCEAEE'
         });
         CKEDITOR.config.allowedContent = true;
+
+        $(function () {
+            $('#datetimepicker3').datetimepicker({
+                format: 'LT'
+            });
+        });
+
     </script>
+
+<script src="{{asset('/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+<script src="{{asset('/jquery.easing.min.js')}}"></script>
+<script src="{{asset('js/sb-admin-2.min.js')}}"></script>
+
 </body>
 
 </html>
