@@ -9,12 +9,15 @@
   }
   html {
     scroll-behavior: smooth;
-    font-size: 16px;
+    font-size: 1vw;
   }
   body {
     background-color: #F7F4E9;
     position: relative;
     overflow-x: hidden;
+  }
+  .hidden {
+    display: none;
   }
   .secondary-color {
     color: #FF735B;
@@ -69,6 +72,10 @@
     font-size: 1rem;
     font-weight: 400;
   }
+  .nav {
+    --mdb-nav-link-color: black;
+    --mdb-nav-link-hover-color: black;
+  }
   #wrapper-text-landing {
     margin-left: 10vw;
     margin-bottom: 5vh;
@@ -94,7 +101,7 @@
     display: flex;
     align-items: center;
     padding: 5% 15%;
-    min-height: 300px;
+    min-height: 100%;
   }
   .carousel-inner {
     height: fit-content;
@@ -144,7 +151,7 @@
     color: white;
     padding: 1rem;
     font-size: 1.5rem;
-    min-height: 300px;
+    min-height: 18vw;
     text-align: center;
   }
   .item-tall {
@@ -176,5 +183,37 @@
   .order-card {
     background-color: #f8f9fa;
     padding: 1rem
+  }
+  .box-f-image {
+    padding: 0 6vw;
+    width: 18vw;
+  }
+  .box-f-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  #mid-f-support {
+    border-left: #FF735B 1px solid;
+    border-right: #FF735B 1px solid;
+  }
+  #facility-icon-title {
+    margin: 6vw 0;
+  }
+  .img-facility {
+    width: 100%;
+  }
+  .img-facility img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  @media only screen and (max-width: 1024px) {
+    .h6 {
+      font-size: 1.5rem;
+    }
+    .nav-link {
+      font-size: 1.25rem;
+    }
   }
 </style>
