@@ -90,7 +90,7 @@
                         <div class="row mb-2 flex-column">
                             
 
-                            <div class="col-md-8 offset-md-4 flex">
+                            <div class="col-md-8 offset-md-4 flex">                       
                                     <div class="d-grid gap-2 col-6">
                                          <button class="btn btn-primary" type="button">Login</button>
                                     </div>
