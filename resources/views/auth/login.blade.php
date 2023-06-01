@@ -41,7 +41,7 @@
                         <div class="form-wrap">
                             <form method="POST" action="{{ route('login') }}">
                                 @csrf
-                                <div class="row mb-3">
+                                <div class="row mb-2 flex-column">
                                     <div class="col-md">
     
                                         <h6 class="h6 label-forms">Email</h6>
@@ -56,26 +56,14 @@
                                         </span>
                                         @enderror
                                     </div>
-
-                                @endif
-
                             </div>
                         </div>
                     
                         
 
-                        <div class="row mb-2 flex-column">
-                            
-
-                            <div class="col-md-8 offset-md-4 flex">                       
-                                    <div class="d-grid gap-2 col-6">
-                                         <button class="btn btn-primary" type="button">Login</button>
-
-                                </div>
-    
+                        <div class="form-wrap">
                                 <div class="row mb-3">
                                     <div class="col-md">
-    
                                         <h6 class="h6 label-forms">Password</h6>
             
                                         <input id="password" type="password"
