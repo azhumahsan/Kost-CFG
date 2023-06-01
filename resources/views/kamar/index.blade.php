@@ -9,14 +9,11 @@
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">
-                    Tambah Data Kamar
-                </div>
                 <div class="card-body">
                     <form action="{{route('kamar.store')}}" method="post" enctype="multipart/form-data">
                         @csrf
                         <div class="row">
-                            <div class="col-md-4">
+                            <div class="col-md-6">
                                 <div class="input-group mb-3">
                                     <div class="input-group-prepend">
                                         <span class="input-group-text">Gedung</span>
@@ -28,7 +25,7 @@
                                     </select>
                                 </div>
                             </div>
-                            <div class="col-md-4">
+                            <div class="col-md-6">
                                 <div class="input-group mb-3">
                                     <div class="input-group-prepend">
                                         <span class="input-group-text">Lantai</span>
@@ -41,7 +38,7 @@
                                     </select>                                
                                 </div>
                             </div>
-                            <div class="col-md-4">
+                            <div class="col-md-6">
                                 <div class="input-group mb-3">
                                     <div class="input-group-prepend">
                                         <span class="input-group-text">No Kamar</span>
@@ -53,6 +50,19 @@
                                 <div class="input-group mb-3">
                                     <input type="file" name="foto" class="form-control" id="inputGroupFile0">
                                     <label class="input-group-text" for="inputGroupFile02">Foto Kamar</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">Kondisi</span>
+                                    </div>
+                                    <select class="custom-select" name="kondisi">
+                                        <option selected>Choose...</option>
+                                        <option value="kosong">Kosong</option>
+                                        <option value="penuh">Penuh</option>
+                                        <option value="rusak">Rusak</option>
+                                    </select>
                                 </div>
                             </div>
                             <div class="col-md-6">
@@ -85,18 +95,24 @@
                     <div class="table-responsive">
                         <table class="table table-strip" id="myTable">
                             <thead class="col-md-12">
-                                <th class="col-md-3">Nomor Kamar</th>
-                                <th class="col-md-3">Lantai</th>
-                                <th class="col-md-3">Harga</th>
-                                <th class="col-md-3">Pilihan</th>
+                                <th class="col-md-4">Nomor Kamar</th>
+                                <th class="col-md-4">Kondisi</th>
+                                <th class="col-md-4">Pilihan</th>
                             </thead>
                             <tbody>
 
                                 @foreach($kamar as $row)
                                 <tr>
                                     <td>{{$row->nomor_kamar}}</td>
-                                    <td>{{$row->lantai}}</td>
-                                    <td>{{$row->harga}}</td>
+                                    <td>
+                                        @if($row->kondisi == 'kosong')
+                                        <span class="badge badge-success">Kosong</span>
+                                        @elseif($row->kondisi == 'penuh')
+                                        <span class="badge badge-danger">Penuh</span>
+                                        @elseif($row->kondisi == 'rusak')
+                                        <span class="badge badge-secondary">Rusak</span>
+                                        @endif
+                                    </td>
                                     <td>
                                         <form action="{{route('kamar.destroy',$row->id)}}" method="post">
                                             @csrf

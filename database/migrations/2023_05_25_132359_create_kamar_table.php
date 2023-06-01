@@ -19,6 +19,7 @@ class CreateKamarTable extends Migration
             $table->integer('lantai');
             $table->string('nomor_kamar')->unique();
             $table->string('foto');
+            $table->enum('kondisi',['kosong', 'penuh', 'rusak']);
             $table->string('harga');
             $table->text('spesifikasi');
             $table->timestamps();

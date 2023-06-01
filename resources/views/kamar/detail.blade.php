@@ -31,6 +31,18 @@
                     <td>{{$kamar->nomor_kamar}}</td>
                 </tr>
                 <tr>
+                    <th>Kondisi Kamar</th>
+                    <td>
+                        @if($kamar->kondisi == 'kosong')
+                        <span class="badge badge-success">Kosong</span>
+                        @elseif($kamar->kondisi == 'penuh')
+                        <span class="badge badge-danger">Penuh</span>
+                        @elseif($kamar->kondisi == 'rusak')
+                        <span class="badge badge-secondary">Rusak</span>
+                        @endif
+                    </td>
+                </tr>
+                <tr>
                     <th>Harga Kamar</th>
                     <td>{{$kamar->harga}}</td>
                 </tr>

@@ -10,16 +10,13 @@
         <div class="col-md-12">
             <div class="mt-4 mr-3 mb-5">
                 <div class="card">
-                    <div class="card-header">
-                        Edit Data Kamar
-                    </div>
                     <div class="card-body">
                         <form action="{{route('kamar.update', $kamar->id)}}" method="post"
                             enctype="multipart/form-data">
                             @csrf
                             {{method_field('PUT')}}
                             <div class="row">
-                                <div class="col-md-4">
+                                <div class="col-md-6">
                                     <div class="input-group mb-3">
                                         <div class="input-group-prepend">
                                             <span class="input-group-text">Gedung</span>
@@ -31,7 +28,7 @@
                                         </select>
                                     </div>
                                 </div>
-                                <div class="col-md-4">
+                                <div class="col-md-6">
                                 <div class="input-group mb-3">
                                     <div class="input-group-prepend">
                                         <span class="input-group-text">Lantai</span>
@@ -44,7 +41,7 @@
                                     </select>                                
                                 </div>
                             </div>
-                                <div class="col-md-4">
+                                <div class="col-md-6">
                                     <div class="input-group mb-3">
                                         <div class="input-group-prepend">
                                             <span class="input-group-text">No Kamar</span>
@@ -62,6 +59,19 @@
                                         </label>
                                     </div>
                                 </div>
+                                <div class="col-md-6">
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">Kondisi</span>
+                                    </div>
+                                    <select class="custom-select" name="kondisi">
+                                        <option selected>{{$kamar->kondisi}} terpilih</option>
+                                        <option value="kosong">kosong</option>
+                                        <option value="penuh">penuh</option>
+                                        <option value="rusak">rusak</option>
+                                    </select>                                
+                                </div>
+                            </div>
                                 <div class="col-md-6">
                                     <div class="input-group mb-3">
                                         <div class="input-group-prepend">
