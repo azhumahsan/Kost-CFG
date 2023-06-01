@@ -9,9 +9,6 @@
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">
-                    Edit Data Booking
-                </div>
                 <div class="card-body">
                     <form action="{{route('booking.update', $booking->id)}}" method="post" enctype="multipart/form-data">
                         @csrf
