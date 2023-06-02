@@ -22,7 +22,7 @@
                           @endif
                       @else
                           <a id="navbarDropdownUser" class="nav nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                              {{ Auth::user()->name }}
+                              {{ auth()->user()->name }}
                           </a>
                           <div class="dropdown-menu dropdown-menu" aria-labelledby="navbarDropdownUser" style="left: 60%; top: 80%; opacity; .5:">
                               <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
@@ -38,12 +38,12 @@
           </nav>
           <div class="w-100 h-100 d-flex flex-column justify-content-center">
             <div id="wrapper-text-landing">
-              <h1 id="title-landing" class="h1 cormorant m-0"> 
+              <h1 id="title-landing" class="h1 cormorant m-0">
                 <span class="secondary-color handwritten h1">Memorable</span>
                 <br>Hotel for
                 <br>moments <span class="secondary-color handwritten h1">Rich</span>
                 <br>in emotions
-              </h1> 
+              </h1>
               <h5 class="h5 py-4">Book now and get the best prices</h5>
             </div>
           </div>
@@ -116,7 +116,8 @@
       </h6>
     </div>
   </div>
-  <!-- Carousel section -->
+  <!-- Grids section -->
+  @if (count($data) > 0)
   <div class="sector border-bottom py-5">
     <div class="support-booking">
       <div class="container">
@@ -127,18 +128,19 @@
               <span class="h4 cormorant">Top in week</span>
             </h2>
           </div>
+          {{-- @dd($data) --}}
           <div class="bookings d-flex w-100 flex-column">
-            <div class="support-booking w-100">
-              <div class="book-grid">
-                <div class="grid-item item-tall"></div>
-                <div class="grid-item item-normal"></div>
-                <div class="grid-item item-footer"></div>
+              <div class="support-booking w-100">
+                  <div class="book-grid">
+                  @foreach ($data as $key=>$item)
+                  <div class="grid-item p-0 {{ $key == 0 ? 'item-tall' : ($key == 1 ? 'item-normal' : 'item-footer') }}"><img src="{{ $item->foto }}" class="h-100 w-100 img-fluid" alt=""></div>
+                  @endforeach
               </div>
             </div>
             <div class="desc-room">
               <div class="wrapper-room-left">
                 <div class="title-room">
-                  <h2 class="h2 mb-4 fw-bold cormorant">Exclussive Room Kost, 3rd Floor{{-- Here goes the title data --}}</h2>
+                  <h2 class="h2 mb-4 fw-bold cormorant">Exclusive room, 3rd floor{{-- Here goes the title data --}}</h2>
                 </div>
                 <a href="" class="share-room-btn btn btn-light support-shadow rounded-1">
                   <h5 class="h5 my-1 secondary-color text-center d-flex align-items-center">
@@ -161,6 +163,9 @@
       </div>
     </div>
   </div>
+  @else
+  <div></div>
+  @endif
   <!-- End of carousel section -->
   <!-- Our Facility section -->
   <div class="sector border-bottom py-5">

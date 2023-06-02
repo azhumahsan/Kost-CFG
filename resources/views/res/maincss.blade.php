@@ -153,6 +153,10 @@
     font-size: 1.5rem;
     min-height: 18vw;
     text-align: center;
+    overflow: hidden;
+  }
+  .img-grids {
+    object-fit: cover;
   }
   .item-tall {
     grid-area: tall;
