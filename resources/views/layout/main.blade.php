@@ -67,8 +67,7 @@
                 <div class="col-md-6 ps-0 border-start">
                     <div class="box-desc text-wrap">
                         <h5 class="h5">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam auctor placerat quam sit amet
-                            pharetra. Mauris in dictum turpis. Proin congue erat quis nisl euismod hendrerit.
+                            Kami bangga menyediakan beragam pilihan kost-kostan modern dan nyaman yang dirancang khusus untuk memenuhi kebutuhan para mahasiswa dan pekerja yang tinggal di kota.
                         </h5>
                     </div>
                 </div>
