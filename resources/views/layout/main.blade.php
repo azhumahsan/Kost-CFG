@@ -113,8 +113,7 @@
             </div>
             <div class="row justify-content-center car-sect mb-5">
                 <h6 class="h6 text-center w-75">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam auctor placerat quam sit amet pharetra.
-                    Mauris in dictum turpis. Proin congue erat quis nisl euismod hendrerit.
+                    Berikut diatas adalah foto halaman lingkungan sekitar di kost cfg.
                 </h6>
             </div>
         </div>
@@ -188,9 +187,8 @@
                     </h2>
                     <br>
                     <h5 class="h5 text-center">
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore eos iure tempora illo architecto,
-                        vel porro aliquid dolore ad nulla maiores distinctio molestias in tenetur culpa officiis modi
-                        doloremque neque?
+                        Kami menyediakan fasilitas-fasilitas umum yang dapat memudahkan anda saat berada di kost cfg
+
                     </h5>
                 </div>
                 <div id="facility-icon-title">
@@ -216,8 +214,7 @@
                                 <div class="text-desc-facility my-5">
                                     <h3 class="h3 cormorant text-center secondary-color">Tempat Parkir</h3>
                                     <h6 class="h6 text-center mt-3 mb-0">
-                                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore eos iure tempora
-                                        illo architecto.
+                                        Tempat parkir yang luas jadi anda tidak perlu khawatir tempat parkir yang penuh.
                                     </h6>
                                 </div>
                             </div>
@@ -230,8 +227,7 @@
                                 <div class="text-desc-facility my-5">
                                     <h3 class="h3 cormorant text-center secondary-color">Kantin</h3>
                                     <h6 class="h6 text-center mt-3 mb-0">
-                                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore eos iure tempora
-                                        illo architecto.
+                                        Menyediakan makanan yang beragam dan pastinya harga anak kost .
                                     </h6>
                                 </div>
                             </div>
@@ -244,26 +240,12 @@
                                 <div class="text-desc-facility my-5">
                                     <h3 class="h3 cormorant text-center secondary-color">Taman</h3>
                                     <h6 class="h6 text-center mt-3 mb-0">
-                                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore eos iure tempora
-                                        illo architecto.
+                                        anda dapat bersantai di taman yang asri dan indah kami sediakan .
                                     </h6>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
-        <!-- end of "Our Facility" Section -->
-        <!-- Contact us Section -->
-        <div class="sector border-bottom py-5">
-            <div class="container">
-                <div id="contact-title">
-                    <h2 class="h2 cormorant fw-bold">
-                        HUBUNGI KAMI
-                        <span class="h4 cormorant">MELALUI</span>
-                    </h2>
-
                 </div>
             </div>
         </div>
