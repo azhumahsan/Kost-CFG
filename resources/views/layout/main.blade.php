@@ -14,7 +14,7 @@
                           <img src="{{asset('images/logo_png.png')}}" alt="" class="img-fluid h-100">
                       </a>
                       @guest
-                         
+
                       @else
                           <a id="navbarDropdownUser" class="nav nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                               {{ auth()->user()->name }}
@@ -33,7 +33,7 @@
           </nav>
           <div class="w-100 h-100 d-flex flex-column justify-content-center">
             <div id="wrapper-text-landing">
-              <h1 id="title-landing" class="h1 cormorant m-0">
+              <h1 id="title-landing" class="h1 cormorant m-0" style="font-size: 4.5rem">
                 <span class="secondary-color handwritten h1">Memorable</span>
                 <br>Hotel for
                 <br>moments <span class="secondary-color handwritten h1">Rich</span>
@@ -111,6 +111,7 @@
     </div>
   </div>
   <!-- Grids section -->
+  <!-- Check if there's any data from the DB -->
   @if (count($data) > 0)
   <div class="sector border-bottom py-5">
     <div class="support-booking">
