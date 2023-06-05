@@ -240,7 +240,7 @@
                                 <div class="text-desc-facility my-5">
                                     <h3 class="h3 cormorant text-center secondary-color">Taman</h3>
                                     <h6 class="h6 text-center mt-3 mb-0">
-                                        anda dapat bersantai di taman yang asri dan indah kami sediakan .
+                                        Anda dapat bersantai di taman yang asri dan indah kami sediakan .
                                     </h6>
                                 </div>
                             </div>
