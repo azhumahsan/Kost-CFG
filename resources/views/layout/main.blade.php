@@ -67,7 +67,7 @@
                 <div class="col-md-6 ps-0 border-start">
                     <div class="box-desc text-wrap">
                         <h5 class="h5">
-                            Kami bangga menyediakan beragam pilihan kost-kostan modern dan nyaman yang dirancang khusus untuk memenuhi kebutuhan para mahasiswa dan pekerja yang tinggal di kota.
+                            Kami menyediakan beragam pilihan kost modern dan nyaman yang dirancang khusus untuk memenuhi kebutuhan para mahasiswa dan pekerja dengan tepat yang strategis.
                         </h5>
                     </div>
                 </div>
