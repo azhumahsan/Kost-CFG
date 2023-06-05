@@ -113,7 +113,7 @@
             </div>
             <div class="row justify-content-center car-sect mb-5">
                 <h6 class="h6 text-center w-75">
-                    Berikut diatas adalah foto halaman lingkungan sekitar di kost cfg.
+                    Berikut diatas adalah foto lingkungan sekitar di kost cfg.
                 </h6>
             </div>
         </div>
