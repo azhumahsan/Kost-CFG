@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Kamar;
 
 class MainController extends Controller
 {
@@ -13,7 +14,8 @@ class MainController extends Controller
      */
     public function index()
     {
-        return view('layout.main');
+        $data = Kamar::all();
+        return view('layout.main', compact('data'));
     }
 
     /**
