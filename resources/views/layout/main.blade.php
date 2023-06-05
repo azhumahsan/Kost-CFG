@@ -14,12 +14,7 @@
                           <img src="{{asset('images/logo_png.png')}}" alt="" class="img-fluid h-100">
                       </a>
                       @guest
-                          @if (Route::has('register'))
-                              <a href="{{ route('register') }}" class="nav nav-link">{{ __('Create Account') }}</a>
-                          @endif
-                          @if (Route::has('login'))
-                              <a href="{{ route('login') }}" class="nav nav-link">{{ __('Login') }}</a>
-                          @endif
+                         
                       @else
                           <a id="navbarDropdownUser" class="nav nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                               {{ Auth::user()->name }}
@@ -47,7 +42,6 @@
               <h5 class="h5 py-4">Book now and get the best prices</h5>
             </div>
           </div>
-          @include('layout.floatingOrder')
         </div>
       </div>
       <div id="head-right-content" class="col-md-6 position-relative p-0 border-bottom">
@@ -241,6 +235,7 @@
           HUBUNGI KAMI
           <span class="h4 cormorant">MELALUI</span>
         </h2>
+
       </div>
     </div>
   </div>
