@@ -220,4 +220,20 @@
       font-size: 1.25rem;
     }
   }
+
+  .btn-sosmed {
+    display: inline;
+    border-radius:24px;
+    border:2px solid #ffffff;
+    color: #ffffff;
+    padding:10px;
+    width: 10rem
+}
+
+.btn-sosmed:hover {
+    border-radius:24px;
+    background-color:#25D366;
+    color:#ffffff;
+    padding:10px;
+}
 </style>

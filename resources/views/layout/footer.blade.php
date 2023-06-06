@@ -3,19 +3,20 @@
 
   <!-- Section: Links  -->
   <section class="py-5">
-    <div class="container text-center text-md-start">
+    <div class="container text-center">
       <!-- Grid row -->
       <div class="row">
         <!-- Grid column -->
         <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
           <!-- Content -->
-          <h6 class="text-uppercase text-light fw-bold mb-4">
-            Company name
-          </h6>
-          <p class="text-light">
-            Here you can use rows and columns to organize your footer content. Lorem ipsum
-            dolor sit amet, consectetur adipisicing elit.
-          </p>
+          <h4 class="text-uppercase text-bold text-white fw-bold mb-4">
+            Kontak
+          </h4>
+          <a href="https://wa.me/6282325661600" target="_blank" class="btn-sosmed"><i class="fab fa-whatsapp text-light p-2 mb-4 w-"></i>Whatsapp</a>
+          <br>
+          <a href="https://wa.me/6282325661600" target="_blank" class="btn-sosmed"><i class="fab fa-instagram text-light p-2 mb-4 w-auto"></i>instagram</a>
+          <br>
+          <a href="https://wa.me/6282325661600" target="_blank" class="btn-sosmed"><i class="fa-regular fa-envelope p-2 text-light w-auto"></i>gmail</a>
         </div>
         <!-- Grid column -->
 
