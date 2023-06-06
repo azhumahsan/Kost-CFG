@@ -93,15 +93,6 @@
                                 <img src="{{ asset($item->photo_links) }}" class="d-block w-100" alt="...">
                             </div>
                             @endforeach
-                            {{-- <div class="carousel-item">
-                                <img src="{{ asset('images/p_2.png') }}" class="d-block w-100" alt="...">
-                            </div>
-                            <div class="carousel-item">
-                                <img src="{{    asset('images/p_1.png') }}" class="d-block w-100" alt="...">
-                            </div>
-                            <div class="carousel-item">
-                                <img src="{{ asset('images/p_2.png') }}" class="d-block w-100" alt="...">
-                            </div> --}}
                         </div>
                     </div>
                     <div class="col-md-2 px-auto position-relative">
