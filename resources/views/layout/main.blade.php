@@ -67,7 +67,8 @@
                 <div class="col-md-6 ps-0 border-start">
                     <div class="box-desc text-wrap">
                         <h5 class="h5">
-                            Kami menyediakan beragam pilihan kost modern dan nyaman yang dirancang khusus untuk memenuhi kebutuhan para mahasiswa dan pekerja dengan tepat yang strategis.
+                            Kami menyediakan beragam pilihan kost modern dan nyaman yang dirancang khusus untuk memenuhi
+                            kebutuhan para mahasiswa dan pekerja dengan tepat yang strategis.
                         </h5>
                     </div>
                 </div>
@@ -75,51 +76,62 @@
         </div>
         <!-- carousel -->
         @if (!empty($carousel) && count($carousel) > 0)
-        <div class="sector border-bottom py-5">
-            <div class="row car-sect my-5">
-                <div id="box-carousel" class="row m-auto p-0 w-100">
-                    <div class="col-md-2 px-auto position-relative">
-                        <div class="d-flex justify-content-end h-100">
-                            <button type="button" class="car-button my-auto" data-bs-target="#carousel-main"
-                                data-bs-slide="prev">
-                                <i class="fa-solid fa-chevron-left"></i>
-                            </button>
-                        </div>
-                    </div>
-                    <div id="carousel-main" class="carousel slide col-md-8" data-bs-ride="carousel">
-                        <div class="carousel-inner">
-                            @foreach ($carousel as $index => $item)
-                            <div class="carousel-item {{ $index === 0 ? 'active' : '' }}">
-                                <img src="{{ asset($item->photo_links) }}" class="d-block w-100" alt="...">
+            <div class="sector border-bottom py-5">
+                <div class="row car-sect my-5">
+                    <div id="box-carousel" class="row m-auto p-0 w-100">
+                        <div class="col-md-2 px-auto position-relative">
+                            <div class="d-flex justify-content-end h-100">
+                                <button type="button" class="car-button my-auto" data-bs-target="#carousel-main"
+                                    data-bs-slide="prev">
+                                    <i class="fa-solid fa-chevron-left"></i>
+                                </button>
                             </div>
-                            @endforeach
                         </div>
-                    </div>
-                    <div class="col-md-2 px-auto position-relative">
-                        <div class="d-flex justify-content-start h-100">
-                            <button type="button" class="car-button my-auto" data-bs-target="#carousel-main"
-                                data-bs-slide="next">
-                                <i class="text-end fa-solid fa-chevron-right"></i>
-                            </button>
+                        <div id="carousel-main" class="carousel slide col-md-8" data-bs-ride="carousel">
+                            <div class="carousel-inner">
+                                @foreach ($carousel as $index => $item)
+                                    <div class="carousel-item {{ $index === 0 ? 'active' : '' }}">
+                                        <img src="{{ asset($item->photo_links) }}" class="d-block w-100" alt="...">
+                                        <div class="position-absolute support-bg-indicator"></div>
+                                        <div class="carousel-caption d-none d-md-block mb-5 ">
+                                            <h4 class="h4 text-light">{{ $item->photo_descs }}</h4>
+                                        </div>
+                                    </div>
+                                @endforeach
+                            </div>
+                            <!-- Carousel Indicators -->
+                            <ol class="carousel-indicators mb-4">
+                                @foreach ($carousel as $index => $item)
+                                    <li data-bs-target="#carousel-main" data-bs-slide-to="{{ $index }}"
+                                        class="{{ $index === 0 ? 'active' : '' }}"></li>
+                                @endforeach
+                            </ol>
+                        </div>
+                        <div class="col-md-2 px-auto position-relative">
+                            <div class="d-flex justify-content-start h-100">
+                                <button type="button" class="car-button my-auto" data-bs-target="#carousel-main"
+                                    data-bs-slide="next">
+                                    <i class="text-end fa-solid fa-chevron-right"></i>
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
+                <div class="row justify-content-center car-sect mb-5">
+                    <h6 class="h6 text-center w-75">
+                        Berikut diatas adalah foto lingkungan sekitar di kost cfg.
+                    </h6>
+                </div>
             </div>
-            <div class="row justify-content-center car-sect mb-5">
-                <h6 class="h6 text-center w-75">
-                    Berikut diatas adalah foto lingkungan sekitar di kost cfg.
-                </h6>
-            </div>
-        </div>
         @else
-        <div></div>
+            <div></div>
         @endif
         <!-- End of carousel -->
         <!-- Grids section -->
         <!-- Check if there's any data from the DB -->
         @if (!empty($data) && count($data) > 0)
-        {{-- Table data is exist --}}
-        <div class="sector border-bottom py-5">
+            {{-- Table data is exist --}}
+            <div class="sector border-bottom py-5">
                 <div class="support-booking">
                     <div class="container">
                         <div class="d-flex flex-column">
@@ -137,7 +149,8 @@
                                             <div
                                                 class="grid-item p-0 {{ $key == 0 ? 'item-tall' : ($key == 1 ? 'item-normal' : 'item-footer') }}">
                                                 <img src="{{ $item->foto }}" class="h-100 w-100 img-fluid"
-                                                    alt=""></div>
+                                                    alt="">
+                                            </div>
                                         @endforeach
                                     </div>
                                 </div>
@@ -170,10 +183,10 @@
                         </div>
                     </div>
                 </div>
-        </div>
+            </div>
         @else
-        {{-- Table data is empty --}}
-        <div></div>
+            {{-- Table data is empty --}}
+            <div></div>
         @endif
         <!-- End of Grids section -->
         <!-- Our Facility section -->

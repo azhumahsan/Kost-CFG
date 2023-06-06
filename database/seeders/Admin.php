@@ -19,6 +19,6 @@ class Admin extends Seeder
         $user->password = \Hash::make("admin");
         $user->level = "admin";
         $user->save();
-        $this->command->info("Welcome Admin!!");
+        $this->command->info("Admin Created!!");
     }
 }
