@@ -23,11 +23,9 @@
       var sHeight = $(window).height();
       // check if screen width is less than 769px (before tablet size)
       if (sWidth < 768) {
-        $(".desktop").toggleClass("hidden", true);
-        $(".mobile").toggleClass("hidden", false);
+        $(".desktop").replaceWith($(".mobile"));
       } else {
-        $(".desktop").toggleClass("hidden", false);
-        $(".mobile").toggleClass("hidden", true);
+        $(".mobile").replaceWith($(".desktop"));
       }
     }, 200); // Adjust the debounce interval as needed
   });

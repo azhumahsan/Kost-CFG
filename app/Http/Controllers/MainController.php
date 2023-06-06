@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Carousel;
 use Illuminate\Http\Request;
 use App\Models\Kamar;
 
@@ -15,7 +16,8 @@ class MainController extends Controller
     public function index()
     {
         $data = Kamar::all();
-        return view('layout.main', compact('data'));
+        $carousel = Carousel::all();
+        return view('layout.main', compact('data', 'carousel'));
     }
 
     /**

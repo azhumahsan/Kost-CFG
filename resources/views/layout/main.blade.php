@@ -51,7 +51,7 @@
                 </div>
                 <div id="head-right-content" class="col-md-6 position-relative p-0 border-bottom">
                     <div id="box-img-landing">
-                        <img src="{{ asset('images/thumbnail_landing.png') }}" class="img-full-h" alt="">
+                        <img src="{{ asset('images/p_1.png') }}" class="img-full-h" alt="">
                     </div>
                 </div>
             </div>
@@ -73,6 +73,8 @@
                 </div>
             </div>
         </div>
+        <!-- carousel -->
+        @if (!empty($carousel) && count($carousel) > 0)
         <div class="sector border-bottom py-5">
             <div class="row car-sect my-5">
                 <div id="box-carousel" class="row m-auto p-0 w-100">
@@ -86,19 +88,20 @@
                     </div>
                     <div id="carousel-main" class="carousel slide col-md-8" data-bs-ride="carousel">
                         <div class="carousel-inner">
-                            {{-- Taruh @foreach disini --}}
-                            <div class="carousel-item active">
-                                <img src="{{ asset('images/thumbnail_landing.png') }}" class="d-block w-100" alt="...">
+                            @foreach ($carousel as $index => $item)
+                            <div class="carousel-item {{ $index === 0 ? 'active' : '' }}">
+                                <img src="{{ asset($item->photo_links) }}" class="d-block w-100" alt="...">
+                            </div>
+                            @endforeach
+                            {{-- <div class="carousel-item">
+                                <img src="{{ asset('images/p_2.png') }}" class="d-block w-100" alt="...">
                             </div>
                             <div class="carousel-item">
-                                <img src="{{ asset('images/dump.png') }}" class="d-block w-100" alt="...">
+                                <img src="{{    asset('images/p_1.png') }}" class="d-block w-100" alt="...">
                             </div>
                             <div class="carousel-item">
-                                <img src="{{ asset('images/thumbnail_landing.png') }}" class="d-block w-100" alt="...">
-                            </div>
-                            <div class="carousel-item">
-                                <img src="{{ asset('images/dump.png') }}" class="d-block w-100" alt="...">
-                            </div>
+                                <img src="{{ asset('images/p_2.png') }}" class="d-block w-100" alt="...">
+                            </div> --}}
                         </div>
                     </div>
                     <div class="col-md-2 px-auto position-relative">
@@ -117,11 +120,15 @@
                 </h6>
             </div>
         </div>
+        @else
+        <div></div>
+        @endif
+        <!-- End of carousel -->
         <!-- Grids section -->
         <!-- Check if there's any data from the DB -->
         @if (!empty($data) && count($data) > 0)
-            {{-- Table data is exist --}}
-            <div class="sector border-bottom py-5">
+        {{-- Table data is exist --}}
+        <div class="sector border-bottom py-5">
                 <div class="support-booking">
                     <div class="container">
                         <div class="d-flex flex-column">
@@ -172,12 +179,12 @@
                         </div>
                     </div>
                 </div>
-            </div>
+        </div>
         @else
-            {{-- Table data is empty --}}
-            <div></div>
+        {{-- Table data is empty --}}
+        <div></div>
         @endif
-        <!-- End of carousel section -->
+        <!-- End of Grids section -->
         <!-- Our Facility section -->
         <div class="sector border-bottom py-5">
             <div class="container">
@@ -188,7 +195,6 @@
                     <br>
                     <h5 class="h5 text-center">
                         Kami menyediakan fasilitas-fasilitas umum yang dapat memudahkan anda saat berada di kost cfg
-
                     </h5>
                 </div>
                 <div id="facility-icon-title">
@@ -252,5 +258,4 @@
     </div>
     {{-- Mobile Version --}}
     <div class="mobile"></div>
-    @include('layout.footer')
 @endsection
