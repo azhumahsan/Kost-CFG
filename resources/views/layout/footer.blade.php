@@ -24,7 +24,7 @@
                 <h4 class="text-uppercase text-bold text-white fw-bold py-3">
                     Tentang
                 </h4>
-                <p class="text-white">Kost-CFG adalah perusahaan yang berdedikasi untuk menyediakan tempat tinggal,
+                <p class="text-white text-center">Kost-CFG adalah perusahaan yang berdedikasi untuk menyediakan tempat tinggal,
                     Dengan komitmen kami terhadap kualitas dan pelayanan yang ramah, memastikan pengalaman Anda di
                     kost-kostan kami menjadi yang terbaik.</p>
             </div>
