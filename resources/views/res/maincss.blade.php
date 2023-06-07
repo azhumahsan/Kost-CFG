@@ -277,7 +277,7 @@ body {
     border: 2px solid #ffffff;
     color: #ffffff;
     padding: 10px;
-    width: 10rem
+    margin: .4rem 0;
 }
 
 .btn-sosmed:hover {

@@ -6,14 +6,12 @@
                 <h4 class="text-uppercase text-bold text-white fw-bold mt-2 text-center">
                     Kontak
                 </h4>
-                <div class="text-center">
-                    <a href="https://wa.me/6282325661600" target="_blank" class="btn-sosmed"><i
-                            class="fab fa-whatsapp text-light p-2 mb-4"></i>Whatsapp</a>
-                    <br>
-                    <a href="https://wa.me/6282325661600" target="_blank" class="btn-sosmed"><i
-                            class="fab fa-instagram text-light p-2 mb-4"></i>instagram</a>
-                    <br>
-                    <a href="https://wa.me/6282325661600" target="_blank" class="btn-sosmed w-100"><i
+                <div class="d-flex align-items-center flex-column text-center">
+                    <a href="https://wa.me/6282325661600" target="_blank" class="h6 btn-sosmed"><i
+                            class="fab fa-whatsapp text-light p-2"></i>Whatsapp</a>
+                    <a href="https://wa.me/6282325661600" target="_blank" class="h6 btn-sosmed"><i
+                            class="fab fa-instagram text-light p-2"></i>instagram</a>
+                    <a href="https://wa.me/6282325661600" target="_blank" class="h6 btn-sosmed "><i
                             class="fa-regular fa-envelope p-2 text-light"></i>gmail</a>
                 </div>
                 <div style="height: 1rem"></div>
