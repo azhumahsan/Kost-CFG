@@ -280,11 +280,10 @@ body {
     margin: .4rem 0;
 }
 
-.btn-sosmed:hover {
+.btn-sosmed:hover, .btn-sosmed:hover>i::before {
     border-radius: 24px;
-    background-color: #25D366;
-    color: #ffffff;
-    padding: 10px;
+    background-color: rgba(255, 255, 255, .8);
+    color: #000;
 }
 
 .support-bg-indicator {
