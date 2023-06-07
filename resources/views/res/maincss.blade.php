@@ -201,6 +201,13 @@
     border-left: #FF735B 1px solid;
     border-right: #FF735B 1px solid;
   }
+  #mid-f-support2 {
+    border-left: #FFFFFF 1px solid;
+    border-right: #FFFFFF 1px solid;
+    margin: 0 2.5rem;
+  }
+  #alamat-footer {
+  }
   #facility-icon-title {
     margin: 6vw 0;
   }

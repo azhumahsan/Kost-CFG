@@ -5,74 +5,44 @@
   <section class="py-5">
     <div class="container text-center">
       <!-- Grid row -->
-      <div class="row">
+      <div class="d-flex justify-content-start w-100">
         <!-- Grid column -->
-        <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+        <div class=" d-flex flex-column justify-content-between">
           <!-- Content -->
-          <h4 class="text-uppercase text-bold text-white fw-bold mb-4">
+          <h4 class="text-uppercase text-bold text-white fw-bold mt-2 text-center">
             Kontak
           </h4>
-          <a href="https://wa.me/6282325661600" target="_blank" class="btn-sosmed"><i class="fab fa-whatsapp text-light p-2 mb-4 w-"></i>Whatsapp</a>
-          <br>
-          <a href="https://wa.me/6282325661600" target="_blank" class="btn-sosmed"><i class="fab fa-instagram text-light p-2 mb-4 w-auto"></i>instagram</a>
-          <br>
-          <a href="https://wa.me/6282325661600" target="_blank" class="btn-sosmed"><i class="fa-regular fa-envelope p-2 text-light w-auto"></i>gmail</a>
+          <div>
+            <a href="https://wa.me/6282325661600" target="_blank" class="btn-sosmed"><i class="fab fa-whatsapp text-light p-2 mb-4 w-"></i>Whatsapp</a>
+            <br>
+            <a href="https://wa.me/6282325661600" target="_blank" class="btn-sosmed"><i class="fab fa-instagram text-light p-2 mb-4 w-auto"></i>instagram</a>
+            <br>
+            <a href="https://wa.me/6282325661600" target="_blank" class="btn-sosmed"><i class="fa-regular fa-envelope p-2 text-light w-auto"></i>gmail</a>
+          </div>
         </div>
         <!-- Grid column -->
 
         <!-- Grid column -->
-        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+        <div class="w-50 px-5 d-flex flex-column align-items-center" id="mid-f-support2">
           <!-- Links -->
-          <h6 class="text-uppercase text-light fw-bold mb-4">
-            Products
-          </h6>
-          <p class="text-light">
-            <a href="#!" class="text-reset">Angular</a>
-          </p>
-          <p class="text-light">
-            <a href="#!" class="text-reset">React</a>
-          </p>
-          <p class="text-light">
-            <a href="#!" class="text-reset">Vue</a>
-          </p>
-          <p class="text-light">
-            <a href="#!" class="text-reset">Laravel</a>
-          </p>
+          <img src="{{ asset('images/CFG_logo.png') }}" alt="" class="" style="height: 40% !important;" >
+          <h4 class="text-uppercase text-bold text-white fw-bold py-3" >
+            Tentang
+          </h4> 
+          <p class="text-white">Kost-CFG adalah perusahaan yang berdedikasi untuk menyediakan tempat tinggal, Dengan komitmen kami terhadap kualitas dan pelayanan yang ramah, memastikan pengalaman Anda di kost-kostan kami menjadi yang terbaik.</p>
         </div>
         <!-- Grid column -->
 
-        <!-- Grid column -->
-        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+        <div id="alamat-footer">
           <!-- Links -->
-          <h6 class="text-uppercase fw-bold mb-4 text-light">
-            Useful links
-          </h6>
-          <p class="text-light">
-            <a href="#!" class="text-reset">Pricing</a>
-          </p>
-          <p class="text-light">
-            <a href="#!" class="text-reset">Settings</a>
-          </p>
-          <p class="text-light">
-            <a href="#!" class="text-reset">Orders</a>
-          </p>
-          <p class="text-light">
-            <a href="#!" class="text-reset">Help</a>
-          </p>
+          <h4 class="text-uppercase text-bold text-white fw-bold mt-2 text-start">
+            alamat
+          </h4> 
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3973.617859988707!2d119.42759857530005!3d-5.165017652167882!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dbee384f8dde9fd%3A0xef9600252a3aa535!2sKost_AndycfG!5e0!3m2!1sid!2sid!4v1686061405064!5m2!1sid!2sid" width="450" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
         <!-- Grid column -->
 
-        <!-- Grid column -->
-        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
-          <!-- Links -->
-          <h6 class="text-uppercase fw-bold mb-4 text-light">Contact</h6>
-          <p class="text-light">New York, NY 10012, US</p>
-          <p class="text-light">info@example.com</p>
-          <p class="text-light">+ 01 234 567 88</p>
-          <p class="text-light">+ 01 234 567 89</p>
-        </div>
-        <!-- Grid column -->
-      </div>
+        
       <!-- Grid row -->
     </div>
   </section>
