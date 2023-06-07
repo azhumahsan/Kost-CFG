@@ -219,6 +219,18 @@
     height: 100%;
     object-fit: cover;
   }
+  .support-bg-indicator {
+    /* Gradient transparant into black */
+    background-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0),
+      rgba(0, 0, 0, .8)
+    );
+    width: 100%;
+    height: 50%;
+    bottom: 0;
+    left: 0;
+  }
   @media only screen and (max-width: 1024px) {
     .h6 {
       font-size: 1.5rem;
