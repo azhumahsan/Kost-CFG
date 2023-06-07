@@ -14,9 +14,9 @@ class AddPhotoLinksToKamarTable extends Migration
     public function up()
     {
         Schema::table('kamar', function (Blueprint $table) {
-            $table->string('photo_link1')->nullable();
-            $table->string('photo_link2')->nullable();
-            $table->string('photo_link3')->nullable();
+            $table->string('photo_link1')->nullable(false);
+            $table->string('photo_link2')->nullable(false);
+            $table->string('photo_link3')->nullable(false);
         });
     }
 
@@ -28,7 +28,7 @@ class AddPhotoLinksToKamarTable extends Migration
     public function down()
     {
         Schema::table('kamar', function (Blueprint $table) {
-            $table->dropColumn(['foto', 'photo_link1', 'photo_link2', 'photo_link3']);
+            $table->dropColumn(['photo_link1', 'photo_link2', 'photo_link3']);
         });
     }
 }

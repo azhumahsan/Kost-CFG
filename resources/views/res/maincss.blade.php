@@ -298,6 +298,14 @@ body {
     left: 0;
 }
 
+.carousel-indicators li {
+    background-color: #FF735B !important;
+    height: .8rem !important;
+    width: .8rem !important;
+    border-radius: 50%;
+    margin: 0 .3rem !important;
+}
+
 #contacts {
     width: 10%
 }

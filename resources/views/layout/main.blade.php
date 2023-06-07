@@ -94,7 +94,7 @@
                                         <img src="{{ asset($item->photo_links) }}" class="d-block w-100" alt="...">
                                         <div class="position-absolute support-bg-indicator"></div>
                                         <div class="carousel-caption d-none d-md-block mb-5 ">
-                                            <h4 class="h4 text-light">{{ $item->photo_descs }}</h4>
+                                            <h5 class="h5 text-light">{{ $item->photo_descs }}</h5>
                                         </div>
                                     </div>
                                 @endforeach
