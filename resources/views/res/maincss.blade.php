@@ -276,14 +276,16 @@ body {
     border-radius: 24px;
     border: 2px solid #ffffff;
     color: #ffffff;
-    padding: 10px;
+    width: 100%;
+    padding: .6rem .4rem;
     margin: .4rem 0;
 }
 
 .btn-sosmed:hover, .btn-sosmed:hover>i::before {
     border-radius: 24px;
     background-color: rgba(255, 255, 255, .8);
-    color: #000;
+    /* color: #000; */
+    color: #ce1f00;
 }
 
 .support-bg-indicator {
