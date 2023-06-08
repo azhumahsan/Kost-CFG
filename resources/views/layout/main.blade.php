@@ -15,24 +15,6 @@
                                         <img src="{{ asset('images/logo_png.png') }}" alt=""
                                             class="img-fluid h-100">
                                     </a>
-                                    @guest
-                                    @else
-                                        <a id="navbarDropdownUser" class="nav nav-link dropdown-toggle" href="#"
-                                            role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
-                                            v-pre>
-                                            {{ auth()->user()->name }}
-                                        </a>
-                                        <div class="dropdown-menu dropdown-menu" aria-labelledby="navbarDropdownUser"
-                                            style="left: 60%; top: 80%; opacity; .5:">
-                                            <a class="dropdown-item" href="{{ route('logout') }}"
-                                                onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                                                {{ __('Logout') }}
-                                            </a>
-                                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                                @csrf
-                                            </form>
-                                        </div>
-                                    @endguest
                                 </div>
                             </div>
                         </nav>
@@ -191,7 +173,7 @@
         <!-- End of Grids section -->
         <!-- Our Facility section -->
         <div class="sector border-bottom py-5">
-            <div class="container">
+            <div class="mx-5">
                 <div id="facility-title">
                     <h2 class="h2 cormorant text-center fw-bold">
                         Fasilitas-Fasilitas Umum<br>Kost CFG
