@@ -120,6 +120,8 @@ body {
     width: fit-content;
 }
 
+
+
 .box-desc {
     display: flex;
     align-items: center;
@@ -261,16 +263,6 @@ body {
     margin: 6vw 0;
 }
 
-.img-facility {
-    width: 100%;
-}
-
-.img-facility img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
 .btn-sosmed {
     display: inline;
     border-radius: 24px;
@@ -305,6 +297,21 @@ body {
     width: .8rem !important;
     border-radius: 50%;
     margin: 0 .3rem !important;
+}
+
+.img-facility {
+  width: 100%; /* Set the width of the container */
+  height: 0; /* Set initial height to 0 */
+  padding-bottom: 56.25%; /* Set the aspect ratio (9/16 = 0.5625 or 56.25%) */
+  position: relative; /* Enable positioning for the container */
+  overflow: hidden; /* Hide any overflow from the container */
+}
+
+.img-facility img {
+  position: absolute; /* Position the image relative to the container */
+  width: 100%; /* Set the width of the image to fill the container */
+  height: 100%; /* Set the height of the image to fill the container */
+  object-fit: cover; /* Maintain the aspect ratio and cover the container */
 }
 
 #contacts {
