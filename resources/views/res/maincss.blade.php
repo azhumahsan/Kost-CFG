@@ -232,7 +232,7 @@ body {
 }
 
 .box-f-image {
-    padding: 0 6vw;
+    padding: 0 5rem;
     width: 18vw;
 }
 
@@ -274,16 +274,18 @@ body {
 .btn-sosmed {
     display: inline;
     border-radius: 24px;
-    border: 2px solid #ffffff;
+    border: .2rem solid #ffffff;
     color: #ffffff;
-    padding: 10px;
+    width: 100%;
+    padding: .6rem .4rem;
     margin: .4rem 0;
 }
 
 .btn-sosmed:hover, .btn-sosmed:hover>i::before {
     border-radius: 24px;
     background-color: rgba(255, 255, 255, .8);
-    color: #000;
+    /* color: #000; */
+    color: #ce1f00;
 }
 
 .support-bg-indicator {
@@ -320,6 +322,20 @@ body {
 
     #contacts {
         width: 15%
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    html {
+        font-size: 1.8vw;
+    }
+
+    .nav-link {
+        font-size: 1rem;
+    }
+
+    #contacts {
+        width: 20%
     }
 }
 
