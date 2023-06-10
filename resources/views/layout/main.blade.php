@@ -115,7 +115,7 @@
             {{-- Table data is exist --}}
             <div class="sector border-bottom py-5">
                 <div class="support-booking">
-                    <div class="container">
+                    <div class="" style="margin: 0 12.5rem;">
                         <div class="d-flex flex-column">
                             <div id="title-booking">
                                 <h2 class="h2 cormorant fw-bold">
