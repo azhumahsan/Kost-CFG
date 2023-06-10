@@ -25,7 +25,7 @@ use App\Http\Controllers\SearchController;
 
 Auth::routes();
 Route::get('/', [App\Http\Controllers\MainController::class, 'index'])->name('kostcfg');
-Route::resource('/detailkamar', RoomController::class);
+Route::resource('detailkamar', RoomController::class)->only(['show']);
 
 
 

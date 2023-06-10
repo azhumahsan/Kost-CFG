@@ -10,6 +10,8 @@
     <style>
         body {
             padding-top: 70px;
+            font-size:18px ;
+            font-weight: 450;
 
         }
 
@@ -69,11 +71,11 @@
             background-color: #fff;
             color: #FF735B;
             width: 100%;
-            
-            
+
+
         }
 
-        
+
 
         img {
             border-radius: 5px;
@@ -147,28 +149,20 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-#F7F4E9 fixed-top">
-        <a class="navbar-brand" href="#">Kost CFG</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-    </nav>
-
     <div class="container">
-        <div class="d-flex justify-content-center align-items-center vh-100">
+        <div class="d-flex justify-content-center align-items-center mb-5">
             <div class="mx-2">
                 <img src="https://source.unsplash.com/800x600?bedroom=1" class="img-fluid"
-                    style="width: 700px; height: auto;">
+                    style="width: 850px; height: auto;">
             </div>
             <div class="d-flex flex-column">
                 <div class="mb-2">
                     <img src="https://source.unsplash.com/800x600?bathroom=3" class="img-fluid"
-                        style="width: 345px; height: auto;">
+                        style="width: 420px; height: auto;">
                 </div>
                 <div class="">
                     <img src="https://source.unsplash.com/800x600?furniture=3" class="img-fluid"
-                        style="width: 345px; height: auto;">
+                        style="width: 420px; height: auto;">
                 </div>
             </div>
         </div>
@@ -176,7 +170,7 @@
         <div class="section d-flex">
             <div class="desc">
                 <div class="section">
-                    <h1 class="card-title">{{$kamar->name}}</h1>
+                    <h1 class="card-title">Deluxe Room</h1>
                     <div class="rt d-flex my-4">
                         <div>
                             <p class="card-text"><svg width="19" height="22" viewBox="0 0 15 17" fill="none"
