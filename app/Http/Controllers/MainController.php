@@ -15,7 +15,7 @@ class MainController extends Controller
      */
     public function index()
     {
-        $data = Kamar::latest()->take(3)->get();
+        $data = Kamar::where('kondisi', 'kosong')->orderBy('kondisi')->orderBy('created_at', 'desc')->get();
         $carousel = Carousel::all();
         return view('layout.main', compact('data', 'carousel'));
     }
