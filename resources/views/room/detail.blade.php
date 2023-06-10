@@ -1,16 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-
-    <title>Room Detail</title>
+@extends('layouts.app')
+@section('content')
     <style>
         body {
             padding-top: 70px;
-            font-size:18px ;
+            font-size: 18px;
             font-weight: 450;
 
         }
@@ -56,26 +49,6 @@
             transition: border-color 0.3s;
             margin: 5px;
         }
-
-        .btn2 {
-            background-color: #FF735B;
-            border: none;
-            border-radius: 5px;
-            color: #fff;
-            width: 100%;
-        }
-
-        .btn1 {
-            border: 1px solid #FF735B;
-            border-radius: 5px;
-            background-color: #fff;
-            color: #FF735B;
-            width: 100%;
-
-
-        }
-
-
 
         img {
             border-radius: 5px;
@@ -130,49 +103,60 @@
             border: 1px solid #ccc;
             color: #555;
             border-radius: 5px;
-
+            padding: 0 .6rem
         }
-
-        .gallery-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-
-        .gallery-item {
-            margin: 10px;
-            width: 200px;
-            height: 200px;
-        }
-
     </style>
-</head>
-
-<body>
     <div class="container">
-        <div class="d-flex justify-content-center align-items-center mb-5">
+        <a href="{{ url()->previous() }}" class="secondary-color" id="back-btn">
+            <i class="fa-solid fa-chevron-left secondary-color"></i>
+            Back
+        </a>
+        {{-- <div class="d-flex justify-content-center align-items-center mb-5">
             <div class="mx-2">
-                <img src="https://source.unsplash.com/800x600?bedroom=1" class="img-fluid"
-                    style="width: 850px; height: auto;">
+                <img src="{{ asset('storage/images/kamar/' . $room->photo_link1) }}" class="img-fluid" style="width: 850px; height: auto;">
             </div>
             <div class="d-flex flex-column">
                 <div class="mb-2">
-                    <img src="https://source.unsplash.com/800x600?bathroom=3" class="img-fluid"
+                    <img src="{{ asset('storage/images/kamar/' . $room->photo_link2) }}" class="img-fluid"
                         style="width: 420px; height: auto;">
                 </div>
                 <div class="">
-                    <img src="https://source.unsplash.com/800x600?furniture=3" class="img-fluid"
+                    <img src="{{ asset('storage/images/kamar/' . $room->photo_link3) }}" class="img-fluid"
                         style="width: 420px; height: auto;">
                 </div>
             </div>
+        </div> --}}
+        <div class="support-booking w-100">
+            <div class="book-grid">
+                <div class="grid-item p-0 item-tall">
+                    <img src="{{ asset('storage/images/kamar/' . $room->photo_link1) }}"
+                        class="h-100 w-100 img-fluid img-cover" alt="">
+                </div>
+                <div class="grid-item p-0 item-normal">
+                    <img src="{{ asset('storage/images/kamar/' . $room->photo_link2) }}"
+                        class="h-100 w-100 img-fluid img-cover" alt="">
+                </div>
+                <div class="grid-item p-0 item-footer">
+                    <img src="{{ asset('storage/images/kamar/' . $room->photo_link3) }}"
+                        class="h-100 w-100 img-fluid img-cover" alt="">
+                </div>
+            </div>
         </div>
-
         <div class="section d-flex">
             <div class="desc">
                 <div class="section">
-                    <h1 class="card-title">Deluxe Room</h1>
-                    <div class="rt d-flex my-4">
+                    <h1 class="h1 card-title mb-2 cormorant">Room No. {{ $room->nomor_kamar }}</h1>
+                    <h6 class="h6 card-text">Gedung {{ $room->gedung }} Lantai {{ $room->lantai }}</h6>
+                    <hr>
+                    <div class="fac mt-5">
+                        <h3 class="card-title mb-3">Deskripsi Kamar</h3>
                         <div>
+                            <i class="bi bi-bag-check-fill"></i>
+                            <p class="card-text">{!! strip_tags($room->spesifikasi, '<p></p>') !!}</p>
+                        </div>
+                    </div>
+                    <div class="rt d-flex my-4">
+                        {{-- <div>
                             <p class="card-text"><svg width="19" height="22" viewBox="0 0 15 17" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <g clip-path="url(#clip0_1213_3)">
@@ -187,8 +171,8 @@
                                     </defs>
                                 </svg>
                                 4.2(22)</p>
-                        </div>
-                        <div>
+                        </div> --}}
+                        {{-- <div>
                             <i class="bi bi-bag-check-fill"></i>
                             <p class="card-text"><svg width="32" height="22" viewBox="0 0 13 15" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
@@ -200,22 +184,18 @@
                                         fill="black" />
                                 </svg>
                                 Transaksi Berhasil!</p>
-                        </div>
+                        </div> --}}
                     </div>
 
-                    <div>
+                    {{-- <div>
                         <p class="card-text"><svg width="28" height="30" viewBox="0 0 23 20" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path
                                     d="M5.88472 3C5.22026 3 4.67069 3.54698 4.67069 4.21144V17.1177H3.43943C3.32303 17.1181 3.21152 17.1646 3.12921 17.2469C3.0469 17.3292 3.00046 17.4407 3 17.5571C2.99978 17.6151 3.01096 17.6725 3.03292 17.7261C3.05488 17.7797 3.08719 17.8284 3.12799 17.8696C3.1688 17.9107 3.21731 17.9434 3.27074 17.9658C3.32418 17.9881 3.3815 17.9998 3.43943 18H5.11357H13.6583H15.3324C15.3906 18.0002 15.4483 17.9889 15.5022 17.9668C15.556 17.9446 15.6049 17.912 15.6461 17.8708C15.6873 17.8296 15.7199 17.7807 15.742 17.7269C15.7642 17.673 15.7755 17.6153 15.7753 17.5571C15.7751 17.4992 15.7634 17.4419 15.7411 17.3884C15.7187 17.335 15.686 17.2865 15.6449 17.2457C15.6037 17.2049 15.555 17.1726 15.5014 17.1506C15.4478 17.1287 15.3904 17.1175 15.3324 17.1177H14.1012V4.21144C14.1012 3.54698 13.5507 3 12.8863 3H5.88472ZM5.88472 3.88316H12.8863C13.0772 3.88316 13.2189 4.02052 13.2189 4.21144V17.1177H5.55299V4.21144C5.55299 4.02051 5.69379 3.88316 5.88472 3.88316ZM11.9325 9.94813C11.6375 9.9558 11.3957 10.2021 11.3957 10.4987C11.3957 10.8 11.645 11.0493 11.9462 11.0493C12.2475 11.0493 12.4968 10.8 12.4968 10.4987C12.4968 10.1974 12.2475 9.94813 11.9462 9.94813C11.9415 9.94813 11.9371 9.94801 11.9325 9.94813Z"
                                     fill="black" stroke="black" stroke-width="0.3" />
                             </svg>
-
-
-
-
                             Tersisa $ Kamar</p>
-                    </div>
+                    </div> --}}
 
                 </div>
 
@@ -225,7 +205,7 @@
 
                         <div>
                             <i class="bi bi-bag-check-fill"></i>
-                            <p class="card-text">
+                            {{-- <p class="card-text">
                                 <svg width="28" height="26" viewBox="0 0 100 100" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <rect width="104" height="102" fill="white" />
@@ -254,7 +234,8 @@
                                         d="M72.707 59.9404C72.41 59.9404 72.207 59.7004 72.207 59.4044V27.2274C72.207 26.9314 72.41 26.6914 72.707 26.6914C73.003 26.6914 73.207 26.9314 73.207 27.2274V59.4054C73.207 59.7004 73.003 59.9404 72.707 59.9404Z"
                                         fill="black" stroke="black" stroke-width="2" />
                                 </svg>
-                                Ukuran $ Kamar</p>
+                                Ukuran $ Kamar
+                            </p> --}}
                             <div>
                                 <i class="bi bi-bag-check-fill"></i>
                                 <p class="card-text mb-4">
@@ -272,7 +253,8 @@
                                             </clipPath>
                                         </defs>
                                     </svg>
-                                    Tidak termasuk Listrik</p>
+                                    Tidak termasuk Listrik
+                                </p>
                             </div>
                         </div>
                         <div class="fac my-5">
@@ -353,16 +335,16 @@
                                                 <path fill-rule="evenodd" clip-rule="evenodd"
                                                     d="M16.5026 53.3916H87.8241C89.209 53.3916 90.2477 54.4303 90.2477 55.8151V59.9698H14.7715V55.4689C14.7715 54.4303 15.464 53.3916 16.5026 53.3916Z"
                                                     stroke="black" stroke-width="4.4" />
-                                                <path d="M55.4047 48.1973H49.3936V48.3486H55.4047V48.1973Z"
-                                                    stroke="black" stroke-width="4.4" />
-                                                <path d="M69.7592 65.8545H69.4744V76.9949H69.7592V65.8545Z"
-                                                    stroke="black" stroke-width="4.4" />
-                                                <path d="M35.1372 65.8545H34.8523V76.9949H35.1372V65.8545Z"
-                                                    stroke="black" stroke-width="4.4" />
+                                                <path d="M55.4047 48.1973H49.3936V48.3486H55.4047V48.1973Z" stroke="black"
+                                                    stroke-width="4.4" />
+                                                <path d="M69.7592 65.8545H69.4744V76.9949H69.7592V65.8545Z" stroke="black"
+                                                    stroke-width="4.4" />
+                                                <path d="M35.1372 65.8545H34.8523V76.9949H35.1372V65.8545Z" stroke="black"
+                                                    stroke-width="4.4" />
                                                 <path d="M58.334 65.8545H58.0491V76.9949H58.334V65.8545Z" stroke="black"
                                                     stroke-width="4.4" />
-                                                <path d="M46.5624 65.8545H46.2776V76.9949H46.5624V65.8545Z"
-                                                    stroke="black" stroke-width="4.4" />
+                                                <path d="M46.5624 65.8545H46.2776V76.9949H46.5624V65.8545Z" stroke="black"
+                                                    stroke-width="4.4" />
                                             </svg>
                                             AC
                                         </p>
@@ -390,8 +372,8 @@
 
                                 <div class="lr d-flex flex-column">
                                     <div>
-                                        <p class="card-text mb-4"> <svg width="28" height="26" viewBox="0 0 104 102"
-                                                fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <p class="card-text mb-4"> <svg width="28" height="26"
+                                                viewBox="0 0 104 102" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <rect width="104" height="102" fill="white" />
                                                 <path fill-rule="evenodd" clip-rule="evenodd"
                                                     d="M25.0984 7C22.2919 7 20 9.3269 20 12.1234V89.8865C20 92.6794 22.2919 95 25.0984 95H78.9013C81.7078 95 84 92.6794 84 89.8865V12.1234C84 9.3269 81.7078 7 78.9013 7H25.0984ZM25.0984 10.9997H78.9013C79.5115 10.9997 80.0003 11.4869 80.0003 12.1234V89.8865C80.0003 90.5068 79.5115 91.0004 78.9013 91.0004H25.0984C24.4883 91.0004 23.9994 90.5068 23.9994 89.8865V12.1234C23.9994 11.4869 24.4883 10.9997 25.0984 10.9997Z"
@@ -404,8 +386,8 @@
                                     </div>
 
                                     <div>
-                                        <p class="card-text mb-4"><svg width="28" height="26" viewBox="0 0 104 102"
-                                                fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <p class="card-text mb-4"><svg width="28" height="26"
+                                                viewBox="0 0 104 102" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <rect width="104" height="102" fill="white" />
                                                 <path
                                                     d="M51.9691 18.0001C40.4631 18.0171 29.0621 20.4512 19.9061 24.8127C18.3691 23.8601 16.8251 23.0837 15.4691 22.7189C13.9391 22.3073 12.4951 22.1673 11.4061 23.0939C10.8481 23.5732 10.5921 24.3209 10.5631 25.0001C10.5331 25.6794 10.6661 26.3548 10.9381 27.0627C11.4061 28.2829 12.3991 29.6136 13.5321 30.9377C10.6171 37.1475 9.03011 44.0378 9.00011 50.9689C8.99996 50.9792 8.99996 50.9896 9.00011 50.9999C9.03011 57.9421 10.5801 64.8436 13.5001 71.0625C12.3851 72.3729 11.4011 73.6984 10.9381 74.9063C10.6671 75.6134 10.5331 76.2901 10.5631 76.9688C10.5931 77.6475 10.8481 78.3646 11.4061 78.8438C12.4951 79.7699 13.9401 79.661 15.4691 79.2499C16.8241 78.8856 18.3701 78.108 19.9061 77.1563C29.0631 81.5172 40.4621 83.9535 51.9691 83.9688C51.9791 83.9689 51.9891 83.9689 51.9991 83.9688C63.5211 83.9528 74.9321 81.4973 84.0931 77.1249C85.6221 78.0697 87.1501 78.8872 88.4991 79.2499C90.0291 79.6616 91.4731 79.771 92.5621 78.8438C93.1211 78.3642 93.3761 77.6481 93.4051 76.9688C93.4351 76.2895 93.3021 75.614 93.0311 74.9063C92.5621 73.686 91.5691 72.3551 90.4371 71.0312C93.3511 64.8213 94.9701 57.9311 94.9991 50.9999C94.9993 50.9896 94.9993 50.9792 94.9991 50.9689C94.9691 44.0269 93.3891 37.1252 90.4681 30.9064C91.5911 29.5896 92.5641 28.2764 93.0311 27.0627C93.3021 26.3556 93.4361 25.679 93.4051 25.0001C93.3751 24.3214 93.1201 23.5731 92.5621 23.0939C91.4731 22.167 90.0291 22.3078 88.4991 22.7189C87.1441 23.0833 85.5991 23.8607 84.0621 24.8127C74.9061 20.4514 63.5061 18.0153 51.9991 18.0001C51.9891 18 51.9791 18 51.9691 18.0001ZM51.9691 20.1877C51.9791 20.1877 51.9891 20.1875 51.9991 20.1877C63.3961 20.2067 74.7641 22.6704 83.6241 27.0001C83.796 27.0863 83.9874 27.1259 84.1794 27.115C84.3713 27.1042 84.5571 27.0431 84.7181 26.9381C86.2941 25.8954 87.8461 25.1712 89.0621 24.8443C90.2781 24.5174 91.0501 24.7182 91.1241 24.7823C91.1641 24.8133 91.2041 24.8483 91.2141 25.0948C91.2241 25.341 91.1641 25.7372 90.9641 26.251C90.5701 27.2787 89.6791 28.6847 88.4011 30.0636C88.2518 30.2249 88.1542 30.4271 88.1208 30.6443C88.0875 30.8615 88.12 31.0837 88.2141 31.2823C91.1601 37.3341 92.7451 44.1537 92.7771 50.9698V51.0008C92.7471 57.8154 91.1621 64.6391 88.2141 70.6885C88.12 70.887 88.0875 71.1092 88.1208 71.3265C88.1542 71.5437 88.2518 71.7459 88.4011 71.9071C89.6811 73.2869 90.5691 74.6593 90.9641 75.6884C91.1621 76.2029 91.2251 76.6293 91.2141 76.8758C91.2041 77.1225 91.1541 77.1571 91.1241 77.1884C91.0541 77.2514 90.2791 77.4537 89.0621 77.1254C87.8451 76.7982 86.2951 76.0753 84.7181 75.0318C84.56 74.9217 84.3757 74.855 84.1837 74.8385C83.9917 74.822 83.7987 74.8563 83.6241 74.9378C74.7661 79.268 63.3951 81.7295 51.9991 81.7502C51.9891 81.7502 51.9791 81.7504 51.9691 81.7502C40.5731 81.7302 29.2041 79.2986 20.3441 74.9689C20.1722 74.8828 19.9808 74.8432 19.7888 74.854C19.5969 74.8649 19.4111 74.9259 19.2501 75.0309C17.6751 76.0733 16.1221 76.7979 14.9061 77.1247C13.6911 77.4517 12.9181 77.2499 12.8441 77.1877C12.8041 77.1567 12.7641 77.1216 12.7541 76.875C12.7441 76.6289 12.8041 76.2014 13.0041 75.6877C13.3981 74.66 14.2901 73.2851 15.5671 71.9064C15.7164 71.7451 15.8141 71.5429 15.8474 71.3257C15.8807 71.1085 15.8482 70.8862 15.7541 70.6877C12.8081 64.6357 11.2231 57.8163 11.1921 51V50.969C11.2221 44.1546 12.8071 37.3309 15.7541 31.2815C15.8482 31.083 15.8807 30.8607 15.8474 30.6435C15.8141 30.4263 15.7164 30.224 15.5671 30.0628C14.2881 28.6829 13.3991 27.3105 13.0041 26.2815C12.8071 25.767 12.7441 25.3405 12.7541 25.094C12.7641 24.8475 12.8141 24.8127 12.8441 24.7815C12.9141 24.7185 13.6901 24.5172 14.9061 24.8435C16.1241 25.1708 17.6741 25.894 19.2501 26.9373C19.4111 27.0423 19.5969 27.1034 19.7888 27.1142C19.9808 27.1251 20.1722 27.0855 20.3441 26.9993C29.2021 22.6692 40.5741 20.2085 51.9691 20.1877ZM21.7821 68.4064C21.5446 68.4369 21.3234 68.5441 21.1523 68.7117C20.9812 68.8792 20.8695 69.0981 20.8341 69.3349C20.7986 69.5718 20.8415 69.8138 20.9561 70.0241C21.0707 70.2344 21.2508 70.4015 21.4691 70.5002C30.1951 74.6968 40.9031 76.9543 51.9691 76.9689C51.9791 76.9691 51.9891 76.9691 51.9991 76.9689C63.0651 76.9539 73.7751 74.6972 82.4991 70.5002C82.6304 70.4386 82.7483 70.3518 82.8461 70.2447C82.9439 70.1376 83.0196 70.0123 83.069 69.876C83.1184 69.7396 83.1404 69.5949 83.1338 69.45C83.1272 69.3051 83.0921 69.163 83.0306 69.0317C82.9691 68.9003 82.8823 68.7824 82.7752 68.6846C82.6681 68.5868 82.5428 68.5111 82.4064 68.4618C82.2701 68.4124 82.1253 68.3904 81.9805 68.397C81.8356 68.4035 81.6934 68.4386 81.5621 68.5002C73.2041 72.5212 62.7541 74.7623 51.9991 74.7814H51.9691C41.2141 74.7624 30.7681 72.5207 22.4061 68.5002C22.2118 68.4086 21.9948 68.3761 21.7821 68.4064Z"
@@ -416,8 +398,8 @@
                                     </div>
 
                                     <div>
-                                        <p class="card-text mb-4"><svg width="28" height="26" viewBox="0 0 104 102"
-                                                fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <p class="card-text mb-4"><svg width="28" height="26"
+                                                viewBox="0 0 104 102" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <rect width="104" height="102" fill="white" />
                                                 <path
                                                     d="M29.7512 14.1133C26.7405 14.1133 24.2914 16.5625 24.2914 19.5731V26.8626C24.2914 29.8732 26.7405 32.3224 29.7512 32.3224C32.7618 32.3224 35.211 29.8732 35.211 26.8626V19.5731C35.211 16.5625 32.7618 14.1133 29.7512 14.1133ZM31.5827 26.8626C31.5827 27.8713 30.7618 28.6922 29.7531 28.6922C28.7444 28.6922 27.9235 27.8713 27.9235 26.8626V19.5731C27.9235 18.5625 28.7444 17.7435 29.7531 17.7435C30.7618 17.7435 31.5827 18.5644 31.5827 19.5731V26.8626Z"
@@ -436,8 +418,8 @@
                                     </div>
 
                                     <div>
-                                        <p class="card-text mb-4"><svg width="28" height="26" viewBox="0 0 104 102"
-                                                fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <p class="card-text mb-4"><svg width="28" height="26"
+                                                viewBox="0 0 104 102" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <rect width="104" height="102" fill="white" />
                                                 <path
                                                     d="M12.76 76.0185H90.8656V57.0076H74.1962H29.4294H12.76V76.0185ZM49.7104 42.9733C48.9904 42.8149 48.2416 42.4981 47.5101 42.0575C45.8166 41.0437 44.1261 39.2754 42.9827 37.2997C41.7616 35.1858 41.105 32.7493 41.5917 30.5404L41.6522 30.3129C41.8048 29.7167 42.0381 29.1407 42.3635 28.5993C43.0346 27.4818 43.6739 26.5141 44.2874 25.5868C47.0608 21.3964 49.2698 18.0585 45.6755 11.7167C45.1542 10.8153 45.1888 9.93686 45.7446 9.10166C45.9002 8.87126 46.0874 8.67543 46.2976 8.51415C46.9542 8.00727 47.8643 7.86039 48.9213 8.13975L49.0451 8.17431C49.4829 8.29815 50.0243 8.49975 50.6147 8.77047C53.4314 10.0751 58.3821 13.4476 61.1152 19.3516C63.2666 23.9999 64.1968 29.9557 63.1629 34.653C62.7971 36.3177 62.175 37.8585 61.2765 39.1746C60.3232 40.5685 59.0675 41.6917 57.4778 42.4261C55.407 43.3852 52.8323 43.6559 49.7075 42.9676L49.7104 42.9733ZM49.9667 37.9506C50.2432 38.1177 50.511 38.2329 50.7443 38.2847C52.7776 38.7311 54.3328 38.6101 55.4762 38.0831C56.2336 37.7317 56.8499 37.1759 57.3251 36.4789C57.855 35.7042 58.2352 34.725 58.4771 33.6249C59.2922 29.9269 58.5203 25.1461 56.7664 21.3647C55.6 18.8476 53.9238 16.9237 52.288 15.5298C53.296 20.6533 50.992 24.1353 48.279 28.2335C47.6685 29.1551 47.032 30.117 46.4675 31.0559C46.3926 31.1797 46.3379 31.3122 46.2976 31.4476L46.2774 31.5513C46.0672 32.5045 46.4531 33.7372 47.1242 34.9007C47.8758 36.2025 48.9386 37.3343 49.9638 37.9506H49.9667ZM51.8128 57.0767C54.4307 57.0767 56.8096 58.1308 58.5318 59.8329C60.2685 61.5436 61.3427 63.9109 61.3427 66.5145C61.3427 69.1209 60.2685 71.4853 58.5318 73.1989C56.8096 74.901 54.4307 75.9551 51.8128 75.9551C49.1949 75.9551 46.816 74.901 45.0938 73.1989C43.3571 71.4853 42.2829 69.1209 42.2829 66.5145C42.2829 63.9109 43.3571 61.5436 45.0938 59.8329C46.816 58.1308 49.1949 57.0767 51.8128 57.0767ZM55.1766 63.2457C54.3213 62.4018 53.1318 61.8777 51.8128 61.8777C50.4966 61.8777 49.3043 62.4018 48.449 63.2457C47.6051 64.078 47.0838 65.2357 47.0838 66.5145C47.0838 67.7932 47.6051 68.9509 48.449 69.7861C49.3043 70.63 50.4938 71.1541 51.8128 71.1541C53.129 71.1541 54.3213 70.63 55.1766 69.7861C56.0205 68.9538 56.5418 67.7961 56.5418 66.5145C56.5418 65.2357 56.0205 64.078 55.1766 63.2457ZM63.1859 46.2537C61.5962 46.2537 60.3059 44.9634 60.3059 43.3737C60.3059 41.7839 61.5962 40.4937 63.1859 40.4937H74.1962C75.7859 40.4937 77.0762 41.7839 77.0762 43.3737V51.2505H93.7456C95.3354 51.2505 96.6256 52.5407 96.6256 54.1305V78.9013C96.6256 80.4911 95.3354 81.7813 93.7456 81.7813H9.88C8.29024 81.7813 7 80.4911 7 78.9013V54.1305C7 52.5407 8.29024 51.2505 9.88 51.2505H26.5494V43.3737C26.5494 41.7839 27.8397 40.4937 29.4294 40.4937H40.4397C42.0294 40.4937 43.3197 41.7839 43.3197 43.3737C43.3197 44.9634 42.0294 46.2537 40.4397 46.2537H32.3094V51.2505H71.3162V46.2537H63.1859Z"
@@ -636,20 +618,8 @@
                                                 d="M53.7246 96.8923C53.5765 97.049 53.4597 97.2326 53.3805 97.4332C53.2886 97.6276 53.2437 97.8409 53.2493 98.0559C53.2472 98.2718 53.2881 98.4858 53.3697 98.6856C53.4513 98.8854 53.572 99.067 53.7246 99.2195C53.884 99.3642 54.0669 99.4806 54.2655 99.5637C54.5135 99.6701 54.7842 99.7128 55.053 99.6882C55.3218 99.6635 55.5801 99.5722 55.8047 99.4225C56.0293 99.2727 56.213 99.0694 56.3391 98.8307C56.4653 98.5921 56.5299 98.3258 56.5271 98.0559C56.532 97.841 56.4871 97.6279 56.396 97.4332C56.3129 97.2346 56.1965 97.0517 56.0519 96.8923C55.7349 96.5999 55.3195 96.4375 54.8882 96.4375C54.457 96.4375 54.0416 96.5999 53.7246 96.8923Z"
                                                 fill="black" stroke="black" />
                                         </svg>
-
                                         Shower
                                     </p>
-                                </div>
-
-
-                            </div>
-
-                            <div class="fac my-5">
-                                <h3 class="card-title">Peraturan Kamar ini</h3>
-
-                                <div>
-                                    <i class="bi bi-bag-check-fill"></i>
-                                    <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima ipsum quasi sequi tempore harum, nostrum, iste nisi, minus non nulla reprehenderit nihil. Explicabo nam iure exercitationem aspernatur blanditiis perferendis fugiat! Magni consequuntur doloribus unde fugiat dolorum voluptates sequi dignissimos rerum, vel molestiae soluta reiciendis quaerat aperiam dolore, adipisci consequatur suscipit corporis! Expedita cumque ab ipsam quod laudantium adipisci recusandae saepe consequatur? Excepturi atque illo maxime laborum officia quibusdam distinctio sit, eum odio autem possimus, molestiae voluptatem consectetur magnam explicabo eligendi at. Nam, repudiandae repellendus assumenda provident laudantium accusamus necessitatibus corrupti exercitationem labore quasi ab, maiores aut vitae, sed alias beatae.</p>
                                 </div>
                             </div>
                         </div>
@@ -660,69 +630,69 @@
             <div class="container">
                 <div class="card price-card-container shadow p-3 mb-5 bg-body-tertiary rounded">
                     <div class="card-body">
-                        <h4 class="card-title">Rp 1.500.000</h4>
-                        <div class="btn-group my-4" role="group">
-                            <input type="date">
+                        <h4 class="card-title">Rp. <span class="secondary-color fw-bold">{{ $room->harga }}</span></h4>
+                        <div class="btn-group my-4 shadow-0" role="group">
+                            <input type="date" class="me-2" id="datepick">
                             <div class="custom-select">
-                                <div class="custom-select-toggle">Per Bulan</div>
+                                {{-- <div id="selectOption" class="custom-select-toggle">Per Bulan</div>
                                 <div class="custom-select-options">
                                     <div class="custom-select-option">Per Bulan</div>
                                     <div class="custom-select-option">Per 3 Bulan</div>
                                     <div class="custom-select-option">Per 6 Bulan</div>
                                     <div class="custom-select-option">Per 1 Tahun</div>
-                                </div>
+                                </div> --}}
+                                <select name="select-opt" id="selectOption" class="form-select">
+                                    <option value="" disabled selected>Pilih salah satu</option>
+                                    <option value="">Per bulan</option>
+                                    <option value="">Per 3 bulan</option>
+                                    <option value="">Per 6 bulan</option>
+                                    <option value="">Per 1 tahun</option>
+                                </select>
                             </div>
                         </div>
-                        <div class="d-grid  my-2">
-                            <button type="button" class="btn1 py-2">Tanya Pemilik</button>
-                        </div>
-                        <div class="d-grid ">
-                            <button type="button" class="btn2 py-2">Ajukan Sewa</button>
+                        {{-- <div class="d-grid  my-2">
+                            <a href="" class="btn btn-detail py-2">Tanya tentang Kamar</a>
+                        </div> --}}
+                        <div class="d-grid">
+                            <a href="https://wa.me/6282325661600/?text=" id="whatsappButton"
+                                class="btn btn-detail py-2 disabled-btn">Ajukan Sewa</a>
                         </div>
                     </div>
                 </div>
             </div>
-
         </div>
-
-        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-        <script>
-            document.addEventListener('DOMContentLoaded', function () {
-                const customSelects = document.querySelectorAll('.custom-select');
-                customSelects.forEach(customSelect => {
-                    const toggle = customSelect.querySelector('.custom-select-toggle');
-                    const options = customSelect.querySelector('.custom-select-options');
-
-                    let isOpen = false;
-
-                    toggle.addEventListener('click', function (event) {
-                        event.stopPropagation();
-                        isOpen = !isOpen;
-                        options.style.display = isOpen ? 'block' : 'none';
-                    });
-
-                    const optionElements = options.querySelectorAll('.custom-select-option');
-                    optionElements.forEach(option => {
-                        option.addEventListener('click', function () {
-                            toggle.textContent = option.textContent;
-                            isOpen = false;
-                            options.style.display = 'none';
-                        });
-                    });
-                });
-
-                document.addEventListener('click', function () {
-                    customSelects.forEach(customSelect => {
-                        const options = customSelect.querySelector('.custom-select-options');
-                        options.style.display = 'none';
-                    });
-                });
+    </div>
+    @include('res.mainjs')
+    <script>
+        $(document).ready(function() {
+            var whatsappButton = $('#whatsappButton');
+            // var dateInput = $('#datepick').val();
+            // day = date.getDate();
+            // month = date.getMonth() + 1;
+            // year = date.getFullYear();
+            $('#datepick').val(formatDate());
+            $('#selectOption').change(function(e) {
+                var selectedText = $('#selectOption :selected').text();
+                // var datetext = day + '-' + month + '-' + year;
+                var datetext = formatDate();
+                var text = 'Halo, saya ingin menyewa kamar ' + selectedText +
+                    ' di kamar nomor {{ $room->nomor_kamar }}, Gedung {{ $room->gedung }}, Lantai {{ $room->lantai }}, dengan harga Rp. {{ $room->harga }}, dimulai pada tanggal ' +
+                    datetext + ', Terima kasih.';
+                whatsappButton.attr('href', 'https://wa.me/6282325661600/?text=' + text);
+                $(whatsappButton).removeClass('disabled-btn');
             });
 
-        </script>
-        </script>
-</body>
+            function padTo2Digits(num) {
+                return num.toString().padStart(2, '0');
+            }
 
-</html>
+            function formatDate(date = new Date()) {
+                return [
+                    date.getFullYear(),
+                    padTo2Digits(date.getMonth() + 1),
+                    padTo2Digits(date.getDate()),
+                ].join('-');
+            }
+        });
+    </script>
+@endsection

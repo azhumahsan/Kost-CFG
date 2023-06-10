@@ -14,6 +14,45 @@
 <!-- CkEditor -->
 <script src="https://cdn.ckeditor.com/4.20.2/standard-all/ckeditor.js"></script>
 
+<!-- Propperjs? -->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+
+<!-- Bootstrap? -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const customSelects = document.querySelectorAll('.custom-select');
+        customSelects.forEach(customSelect => {
+            const toggle = customSelect.querySelector('.custom-select-toggle');
+            const options = customSelect.querySelector('.custom-select-options');
+
+            let isOpen = false;
+
+            toggle.addEventListener('click', function(event) {
+                event.stopPropagation();
+                isOpen = !isOpen;
+                options.style.display = isOpen ? 'block' : 'none';
+            });
+
+            const optionElements = options.querySelectorAll('.custom-select-option');
+            optionElements.forEach(option => {
+                option.addEventListener('click', function() {
+                    toggle.textContent = option.textContent;
+                    isOpen = false;
+                    options.style.display = 'none';
+                });
+            });
+        });
+
+        document.addEventListener('click', function() {
+            customSelects.forEach(customSelect => {
+                const options = customSelect.querySelector('.custom-select-options');
+                options.style.display = 'none';
+            });
+        });
+    });
+</script>
+
 <script>
     // use "debounce" method
     var resizeTimer;

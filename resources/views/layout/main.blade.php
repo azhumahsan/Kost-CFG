@@ -120,7 +120,7 @@
                             <div id="title-booking">
                                 <h2 class="h2 cormorant fw-bold">
                                     JENIS KAMAR
-                                    <span class="h4 cormorant">Top in week</span>
+                                    <span class="h4 cormorant">Latest Empty Room</span>
                                 </h2>
                             </div>
                             {{-- @dd($data) --}}
@@ -130,23 +130,23 @@
                                         <div class="book-grid">
                                             <div class="grid-item p-0 item-tall">
                                                 <img src="{{ asset('storage/images/kamar/' . $item->photo_link1) }}"
-                                                    class="h-100 w-100 img-fluid" alt="">
+                                                    class="h-100 w-100 img-fluid img-cover" alt="">
                                             </div>
                                             <div class="grid-item p-0 item-normal">
                                                 <img src="{{ asset('storage/images/kamar/' . $item->photo_link2) }}"
-                                                    class="h-100 w-100 img-fluid" alt="">
+                                                    class="h-100 w-100 img-fluid img-cover" alt="">
                                             </div>
                                             <div class="grid-item p-0 item-footer">
                                                 <img src="{{ asset('storage/images/kamar/' . $item->photo_link3) }}"
-                                                    class="h-100 w-100 img-fluid" alt="">
+                                                    class="h-100 w-100 img-fluid img-cover" alt="">
                                             </div>
                                         </div>
                                     </div>
                                     <div class="desc-room">
                                         <div class="wrapper-room-left">
                                             <div class="title-room">
-                                                <h2 class="h2 mb-2 fw-bold cormorant">Room No. {{ $item->nomor_kamar }}</h2>
-                                                <h5 class="h5 mb-4 open-sans">Floor: {{ $item->lantai }}</h5>
+                                                <h2 class="h2 mb-2 fw-bold cormorant">Kamar nomor {{ $item->nomor_kamar }}</h2>
+                                                <h5 class="h5 mb-4 open-sans">Lantai {{ $item->lantai }}, Gedung {{ $item->gedung }}</h5>
                                             </div>
                                             {{-- <a href=""
                                                 class="share-room-btn btn btn-light support-shadow rounded-1">
@@ -161,7 +161,7 @@
                                             <div class="support-shadow rounded-1 order-card d-flex flex-column">
                                                 <h2 class="h2 cormorant">Rp. {{ $item->harga }}<span
                                                         class="h5 cormorant"> / month</span></h2>
-                                                <a href="{{route('detailkamar', 1)}}"
+                                                <a href="room/{{ $item->id }}"
                                                     class="btn btn-to-detail bg-secondary-color rounded-0 mt-3 py-2 h5 text-light">
                                                     DETAIL
                                                 </a>

@@ -25,16 +25,13 @@ use App\Http\Controllers\SearchController;
 
 Auth::routes();
 Route::get('/', [App\Http\Controllers\MainController::class, 'index'])->name('kostcfg');
-Route::resource('/detailkamar{id}', RoomController::class);
-
-
 
 Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-
 Route::resource('/admin', AdminController::class);
 Route::resource('/kamar', KamarController::class);
+Route::resource('/room', RoomController::class);
 // Route::middleware(['checkFormData'])->resource('/kamar', KamarController::class);
 // Route::resource('/customer', CustomerController::class);
 Route::resource('/booking', BookedController::class);

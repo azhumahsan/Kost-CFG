@@ -15,6 +15,7 @@ class RoomController extends Controller
      */
     public function index()
     {
+
         return view('room.index');
     }
 
@@ -49,7 +50,7 @@ class RoomController extends Controller
     public function show($id)
     {
         $room = Room::findOrFail($id); // Retrieve the room data using the provided id
-        return view('room.index', compact('room'));
+        return view('room.detail', compact('room'));
     }
     /**
      * Show the form for editing the specified resource.
