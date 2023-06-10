@@ -10,9 +10,9 @@
                     <a href="https://wa.me/6282325661600" target="_blank" class="h6 btn-sosmed"><i
                             class="fab fa-whatsapp text-light p-2"></i>Whatsapp</a>
                     <a href="https://www.instagram.com/cfg_kostmks/" target="_blank" class="h6 btn-sosmed"><i
-                            class="fab fa-instagram text-light p-2"></i>instagram</a>
-                    <a href="mailto:kostcfg@gmail.com" target="_blank" class="h6 btn-sosmed "><i
-                            class="fa-regular fa-envelope p-2 text-light"></i>gmail</a>
+                            class="fab fa-instagram text-light p-2"></i>Instagram</a>
+                    <a href="mailto:kostcfg@gmail.com" target="_parent" class="h6 btn-sosmed"><i
+                            class="fa-regular fa-envelope p-2 text-light"></i>Gmail</a>
                 </div>
                 <div style="height: 1rem"></div>
             </div>

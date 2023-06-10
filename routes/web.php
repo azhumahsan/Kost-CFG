@@ -25,9 +25,10 @@ use App\Http\Controllers\SearchController;
 
 Auth::routes();
 Route::get('/', [App\Http\Controllers\MainController::class, 'index'])->name('kostcfg');
+Route::resource('/detailkamar', RoomController::class);
 
 
-Route::get('/room', [RoomController::class, 'index']);
+
 Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
@@ -37,3 +38,5 @@ Route::resource('/kamar', KamarController::class);
 // Route::resource('/customer', CustomerController::class);
 Route::resource('/booking', BookedController::class);
 Route::resource('/search', SearchController::class);
+
+
