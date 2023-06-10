@@ -35,6 +35,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::resource('/admin', AdminController::class);
 Route::resource('/kamar', KamarController::class);
+// Route::middleware(['checkFormData'])->resource('/kamar', KamarController::class);
 // Route::resource('/customer', CustomerController::class);
 Route::resource('/booking', BookedController::class);
 Route::resource('/search', SearchController::class);

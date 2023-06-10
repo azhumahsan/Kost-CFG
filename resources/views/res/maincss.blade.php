@@ -209,6 +209,11 @@ body {
     border-bottom-right-radius: 1rem;
 }
 
+.btn-to-detail:hover {
+    background-color: rgba(0, 0, 0, .8);
+    color: white;
+}
+
 .support-booking {
     padding: 2.5rem 0;
 }

@@ -51,7 +51,7 @@
                                 <div class="col-md">
                                     <h6 class="h6 label-forms">Password</h6>
 
-                                    <input id="password" type="text"
+                                    <input id="password" type="password"
                                         class="form-control @error('password') is-invalid @enderror" name="password"
                                         required autocomplete="current-password">
 

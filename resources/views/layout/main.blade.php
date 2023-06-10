@@ -124,54 +124,52 @@
                                 </h2>
                             </div>
                             {{-- @dd($data) --}}
-                            <div class="bookings d-flex w-100 flex-column">
-                                <div class="support-booking w-100">
-                                    <div class="book-grid">
-                                        @foreach ($data as $key => $item)
-                                            <div
-                                                class="grid-item p-0 item-tall">
-                                                <img src="{{ asset('storage/images/kamar/' . $item->photo_link1) }}" class="h-100 w-100 img-fluid"
-                                                    alt="">
+                            @foreach ($data as $key => $item)
+                                <div class="bookings d-flex w-100 flex-column">
+                                    <div class="support-booking w-100">
+                                        <div class="book-grid">
+                                            <div class="grid-item p-0 item-tall">
+                                                <img src="{{ asset('storage/images/kamar/' . $item->photo_link1) }}"
+                                                    class="h-100 w-100 img-fluid" alt="">
                                             </div>
-                                            <div
-                                                class="grid-item p-0 item-normal">
-                                                <img src="{{ asset('storage/images/kamar/' . $item->photo_link2) }}" class="h-100 w-100 img-fluid"
-                                                    alt="">
+                                            <div class="grid-item p-0 item-normal">
+                                                <img src="{{ asset('storage/images/kamar/' . $item->photo_link2) }}"
+                                                    class="h-100 w-100 img-fluid" alt="">
                                             </div>
-                                            <div
-                                                class="grid-item p-0 item-footer">
-                                                <img src="{{ asset('storage/images/kamar/' . $item->photo_link3) }}" class="h-100 w-100 img-fluid"
-                                                    alt="">
+                                            <div class="grid-item p-0 item-footer">
+                                                <img src="{{ asset('storage/images/kamar/' . $item->photo_link3) }}"
+                                                    class="h-100 w-100 img-fluid" alt="">
                                             </div>
-                                        @endforeach
-                                    </div>
-                                </div>
-                                <div class="desc-room">
-                                    <div class="wrapper-room-left">
-                                        <div class="title-room">
-                                            <h2 class="h2 mb-4 fw-bold cormorant">Exclusive room, 3rd
-                                                floor{{-- Here goes the title data --}}</h2>
                                         </div>
-                                        <a href="" class="share-room-btn btn btn-light support-shadow rounded-1">
-                                            <h5 class="h5 my-1 secondary-color text-center d-flex align-items-center">
-                                                <img src="{{ asset('images/share_ic.svg') }}" alt="[]"
-                                                    style="height: 1em" class="pe-2">
-                                                Share
-                                            </h5>
-                                        </a>
                                     </div>
-                                    <div class="wrapper-room-right">
-                                        <div class="support-shadow rounded-1 order-card d-flex flex-column">
-                                            <h2 class="h2 cormorant">Rp 1.900.000{{-- Here goes the price data --}}<span
-                                                    class="h5 cormorant"> / month</span></h2>
-                                            <a href=""
-                                                class="btn bg-secondary-color rounded-0 mt-3 py-2 h5 text-light">
-                                                DETAIL
-                                            </a>
+                                    <div class="desc-room">
+                                        <div class="wrapper-room-left">
+                                            <div class="title-room">
+                                                <h2 class="h2 mb-2 fw-bold cormorant">Room No. {{ $item->nomor_kamar }}</h2>
+                                                <h5 class="h5 mb-4 open-sans">Floor: {{ $item->lantai }}</h5>
+                                            </div>
+                                            {{-- <a href=""
+                                                class="share-room-btn btn btn-light support-shadow rounded-1">
+                                                <h5 class="h5 my-1 secondary-color text-center d-flex align-items-center">
+                                                    <img src="{{ asset('images/share_ic.svg') }}" alt="[]"
+                                                        style="height: 1em" class="pe-2">
+                                                    Share
+                                                </h5>
+                                            </a> --}}
+                                        </div>
+                                        <div class="wrapper-room-right">
+                                            <div class="support-shadow rounded-1 order-card d-flex flex-column">
+                                                <h2 class="h2 cormorant">Rp. {{ $item->harga }}<span
+                                                        class="h5 cormorant"> / month</span></h2>
+                                                <a href=""
+                                                    class="btn btn-to-detail bg-secondary-color rounded-0 mt-3 py-2 h5 text-light">
+                                                    DETAIL
+                                                </a>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            @endforeach
                         </div>
                     </div>
                 </div>
