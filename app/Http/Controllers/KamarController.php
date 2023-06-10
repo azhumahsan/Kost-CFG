@@ -13,11 +13,11 @@ class KamarController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-     public function __construct()
-     {
-         $this->middleware('auth');
-     }
-    
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function index()
     {
         $kamar = Kamar::all();
@@ -42,15 +42,40 @@ class KamarController extends Controller
      */
     public function store(Request $request)
     {
-        $input = $request->all();
+        $input = $request->except(
+            'photo1',
+            'photo2',
+            'photo3'
+        );
 
-        if($request->hasFile('foto'))
-        {
+        // $destination_path = 'public/images/kamar';
+        // $image = $request->file('foto');
+        // $name = $image->getClientOriginalName();
+        // $path = $request->file('foto')->storeAs($destination_path, $name);
+        // $input['photo_link1'] = $name;
+
+        if ($request->hasFile('photo1')) {
             $destination_path = 'public/images/kamar';
-            $image = $request->file('foto');
+            $image = $request->file('photo1');
             $name = $image->getClientOriginalName();
-            $path = $request->file('foto')->storeAs($destination_path, $name);
-            $input['foto'] = $name;
+            $path = $request->file('photo1')->storeAs($destination_path, $name);
+            $input['photo_link1'] = $name;
+        }
+
+        if ($request->hasFile('photo2')) {
+            $destination_path = 'public/images/kamar';
+            $image = $request->file('photo2');
+            $name = $image->getClientOriginalName();
+            $path = $request->file('photo2')->storeAs($destination_path, $name);
+            $input['photo_link2'] = $name;
+        }
+
+        if ($request->hasFile('photo3')) {
+            $destination_path = 'public/images/kamar';
+            $image = $request->file('photo3');
+            $name = $image->getClientOriginalName();
+            $path = $request->file('photo3')->storeAs($destination_path, $name);
+            $input['photo_link3'] = $name;
         }
 
         Kamar::create($input);
@@ -93,13 +118,12 @@ class KamarController extends Controller
         $kamar = Kamar::find($id);
         $data = $request->all();
 
-        if($request->hasFile('foto'))
-        {
+        if ($request->hasFile('foto')) {
             $destination_path = 'public/images/kamar';
             $image = $request->file('foto');
             $name = $image->getClientOriginalName();
             $path = $request->file('foto')->storeAs($destination_path, $name);
-            $data['foto'] = $name;
+            $data['photo_link1'] = $name;
         }
 
         $kamar->update($data);

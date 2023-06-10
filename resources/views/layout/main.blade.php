@@ -129,8 +129,18 @@
                                     <div class="book-grid">
                                         @foreach ($data as $key => $item)
                                             <div
-                                                class="grid-item p-0 {{ $key == 0 ? 'item-tall' : ($key == 1 ? 'item-normal' : 'item-footer') }}">
-                                                <img src="{{ $item->foto }}" class="h-100 w-100 img-fluid"
+                                                class="grid-item p-0 item-tall">
+                                                <img src="{{ asset('storage/images/kamar/' . $item->photo_link1) }}" class="h-100 w-100 img-fluid"
+                                                    alt="">
+                                            </div>
+                                            <div
+                                                class="grid-item p-0 item-normal">
+                                                <img src="{{ asset('storage/images/kamar/' . $item->photo_link2) }}" class="h-100 w-100 img-fluid"
+                                                    alt="">
+                                            </div>
+                                            <div
+                                                class="grid-item p-0 item-footer">
+                                                <img src="{{ asset('storage/images/kamar/' . $item->photo_link3) }}" class="h-100 w-100 img-fluid"
                                                     alt="">
                                             </div>
                                         @endforeach

@@ -48,8 +48,20 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="input-group mb-3">
-                                    <input type="file" name="foto" class="form-control" id="inputGroupFile0">
-                                    <label class="input-group-text" for="inputGroupFile02">Foto Kamar</label>
+                                    <input type="file" name="photo1" class="form-control" id="inputGroupFile1">
+                                    <label class="input-group-text" for="inputGroupFile1">Photo 1</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="input-group mb-3">
+                                    <input type="file" name="photo2" class="form-control" id="inputGroupFile2">
+                                    <label class="input-group-text" for="inputGroupFile2">Photo 2</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="input-group mb-3">
+                                    <input type="file" name="photo3" class="form-control" id="inputGroupFile3">
+                                    <label class="input-group-text" for="inputGroupFile3">Photo 3</label>
                                 </div>
                             </div>
                             <div class="col-md-6">
