@@ -161,7 +161,7 @@
                                             <div class="support-shadow rounded-1 order-card d-flex flex-column">
                                                 <h2 class="h2 cormorant">Rp. {{ $item->harga }}<span
                                                         class="h5 cormorant"> / month</span></h2>
-                                                <a href="{{ route('room.index', ['id' => $item->id]) }}"
+                                                <a href="{{route('detailkamar', 1)}}"
                                                     class="btn btn-to-detail bg-secondary-color rounded-0 mt-3 py-2 h5 text-light">
                                                     DETAIL
                                                 </a>
