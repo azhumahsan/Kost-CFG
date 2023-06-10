@@ -58,7 +58,7 @@ public function show($id)
      */
     public function edit($id)
     {
-        //
+        return view('room.index');
     }
 
     /**
