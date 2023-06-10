@@ -1,6 +1,12 @@
-@extends('layouts.template')
+<!DOCTYPE html>
+<html lang="en">
 
-@section('content')
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <title>Room Detail</title>
     <style>
         body {
             padding-top: 70px;
@@ -147,19 +153,6 @@
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse " id="navbarNav">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Login</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Kamar</a>
-                </li>
-            </ul>
-        </div>
     </nav>
 
     <div class="container">
@@ -183,7 +176,7 @@
         <div class="section d-flex">
             <div class="desc">
                 <div class="section">
-                    <h1 class="card-title">DELUXE ROOM</h1>
+                    <h1 class="card-title">{{$kamar->name}}</h1>
                     <div class="rt d-flex my-4">
                         <div>
                             <p class="card-text"><svg width="19" height="22" viewBox="0 0 15 17" fill="none"
@@ -738,5 +731,4 @@
         </script>
 </body>
 
-
-@endsection
+</html>

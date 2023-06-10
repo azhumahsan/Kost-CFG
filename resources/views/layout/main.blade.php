@@ -142,6 +142,7 @@
                                             </div>
                                         </div>
                                     </div>
+<<<<<<< HEAD
                                     <div class="desc-room">
                                         <div class="wrapper-room-left">
                                             <div class="title-room">
@@ -166,6 +167,16 @@
                                                     DETAIL
                                                 </a>
                                             </div>
+=======
+                                    <div class="wrapper-room-right">
+                                        <div class="support-shadow rounded-1 order-card d-flex flex-column">
+                                            <h2 class="h2 cormorant">Rp 1.900.000{{-- Here goes the price data --}}<span
+                                                    class="h5 cormorant"> / month</span></h2>
+                                            <a href="{{ route('detailkamar') }}"
+                                                class="btn bg-secondary-color rounded-0 mt-3 py-2 h5 text-light">
+                                                DETAIL
+                                            </a>
+>>>>>>> ca1c3632617923dda59dd7bf8b9028f1a6d8b4f5
                                         </div>
                                     </div>
                                 </div>
